@@ -7,22 +7,22 @@ const perguntas = [
   {
     Imagem: "imagens/alfabeto/b.png",
     correta: "B",
-    opcoes: ["B", "C", "D"]
+    opcoes: ["B", "C", "D", "F"]
   },
   {
     Imagem: "imagens/alfabeto/c.png",
     correta: "C",
-    opcoes: ["C", "G", "F"]
+    opcoes: ["C", "G", "F", "H"]
   },
   {
     Imagem: "imagens/alfabeto/d.png",
     correta: "D",
-    opcoes: ["D", "L", "M"]
+    opcoes: ["D", "L", "M" , "N"]
   },
   {
     Imagem: "imagens/alfabeto/e.png",
     correta: "E",
-    opcoes: ["E", "F", "I"]
+    opcoes: ["E", "F", "I", "J"]
   }
 ];
 
