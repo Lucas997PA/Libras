@@ -1,0 +1,32 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-container {
+  margin-top: 100px;
+}
+
+h1 {
+  font-size: 2.5em;
+  color: #2c3e50;
+}
+
+.menu-button {
+  display: inline-block;
+  margin: 15px;
+  padding: 15px 30px;
+  font-size: 18px;
+  text-decoration: none;
+  color: white;
+  background-color: #2980b9;
+  border-radius: 10px;
+  transition: background 0.3s;
+}
+
+.menu-button:hover {
+  background-color: #3498db;
+}
