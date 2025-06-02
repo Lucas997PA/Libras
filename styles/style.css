@@ -16,15 +16,19 @@ h1 {
 }
 
 .menu-button {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   margin: 15px;
   padding: 15px 30px;
-  font-size: 18px;
+  font-size: 20px;
   text-decoration: none;
-  color: white;
+  color: rgb(242, 237, 237);
   background-color: #2980b9;
   border-radius: 10px;
   transition: background 0.3s;
+  width: 200px;
+  height: 50px;
 }
 
 .menu-button:hover {
