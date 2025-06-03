@@ -7,47 +7,47 @@ const perguntas = [
   {
     imagem: "imagens/numeros/numero_1.png",
     correta: "1",
-    opcoes: ["1", "3", "7"]
+    opcoes: ["1", "3", "7", "4"]
   },
   {
     imagem: "imagens/numeros/numero_2.png",
     correta: "2",
-    opcoes: ["2", "4", "6"]
+    opcoes: ["2", "4", "6", "5"]
   },
   {
     imagem: "imagens/numeros/numero_3.png",
     correta: "3",
-    opcoes: ["3", "5", "8"]
+    opcoes: ["3", "5", "8", "2"]
   },
   {
     imagem: "imagens/numeros/numero_4.png",
     correta: "4",
-    opcoes: ["4", "0", "9"]
+    opcoes: ["4", "0", "9", "1"]
   },
   {
     imagem: "imagens/numeros/numero_5.png",
     correta: "5",
-    opcoes: ["5", "1", "6"]
+    opcoes: ["5", "1", "6", "3"]
   },
   {
     imagem: "imagens/numeros/numero_6.png",
     correta: "6",
-    opcoes: ["6", "2", "7"]
+    opcoes: ["6", "2", "7", "4"]
   },
   {
     imagem: "imagens/numeros/numero_7.png",
     correta: "7",
-    opcoes: ["7", "3", "8"]
+    opcoes: ["7", "3", "8", "5"]
   },
   {
     imagem: "imagens/numeros/numero_8.png",
     correta: "8",
-    opcoes: ["8", "6", "9"]
+    opcoes: ["8", "6", "9", "2"]
   },
   {
     imagem: "imagens/numeros/numero_9.png",
     correta: "9",
-    opcoes: ["9", "7", "1"]
+    opcoes: ["9", "7", "1", "0"]
   }
 ];
 
