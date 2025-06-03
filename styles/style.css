@@ -8,6 +8,13 @@ body {
 
 .menu-container {
   margin-top: 100px;
+  padding: 20px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
 h1 {
@@ -33,4 +40,24 @@ h1 {
 
 .menu-button:hover {
   background-color: #0c44eb;
+}
+
+/* Responsividade para telas pequenas */
+@media (max-width: 600px) {
+  .menu-container {
+    margin-top: 40px;
+    padding: 10px;
+    width: 90%;
+  }
+
+  h1 {
+    font-size: 1.8em;
+  }
+
+  .menu-button {
+    width: 100%;
+    font-size: 18px;
+    height: auto;
+    padding: 12px;
+  }
 }
