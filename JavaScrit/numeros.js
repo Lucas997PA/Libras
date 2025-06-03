@@ -2,7 +2,7 @@ const perguntas = [
   {
     imagem: "imagens/numeros/numero_0.png",
     correta: "0",
-    opcoes: ["0", "5", "9"]
+    opcoes: ["0", "5", "9", "8"]
   },
   {
     imagem: "imagens/numeros/numero_1.png",
