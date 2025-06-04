@@ -1,135 +1,44 @@
-const perguntas = [
-  {
-    Imagem: "/imagens/alfabeto/a.png",
-    correta: "A",
-    opcoes: ["A", "E", "O", "U"]
-  },
-  {
-    Imagem: "/imagens/alfabeto/b.png",
-    correta: "B",
-    opcoes: ["B", "C", "D", "F"]
-  },
-  {
-    Imagem: "/imagens/alfabeto/c.png",
-    correta: "C",
-    opcoes: ["C", "G", "F", "H"]
-  },
-  {
-    Imagem: "/imagens/alfabeto/d.png",
-    correta: "D",
-    opcoes: ["D", "L", "M" , "N"]
-  },
-  {
-    Imagem: "/imagens/alfabeto/e.png",
-    correta: "E",
-    opcoes: ["E", "F", "I", "J"]
-  },
-  {
-    Imagem: "/imagens/alfabeto/e.png",
-    correta: "F",
-    opcoes: ["E", "F", "I", "J"]
-  },
-  {
-    Imagem: "/imagens/alfabeto/e.png",
-    correta: "G",
-    opcoes: ["E", "F", "I", "J"]
-  },
-  {
-    Imagem: "/imagens/alfabeto/e.png",
-    correta: "H",
-    opcoes: ["E", "F", "I", "J"]
-  },
-  {
-    Imagem: "/imagens/alfabeto/e.png",
-    correta: "I",
-    opcoes: ["E", "F", "I", "J"]
-  },
-  {
-    Imagem: "/imagens/alfabeto/e.png",
-    correta: "J",
-    opcoes: ["E", "F", "I", "J"]
-  },
-  {
-    Imagem: "/imagens/alfabeto/e.png",
-    correta: "K",
-    opcoes: ["E", "F", "I", "J"]
-  },
-  {
-    Imagem: "/imagens/alfabeto/e.png",
-    correta: "L",
-    opcoes: ["E", "F", "I", "J"]
-  },
-  {
-    Imagem: "/imagens/alfabeto/e.png",
-    correta: "M",
-    opcoes: ["E", "F", "I", "J"]
-  },
-  {
-    Imagem: "/imagens/alfabeto/e.png",
-    correta: "N",
-    opcoes: ["E", "F", "I", "J"]
-  },
-  {
-    Imagem: "/imagens/alfabeto/e.png",
-    correta: "O",
-    opcoes: ["E", "F", "I", "J"]
-  },
-  {
-    Imagem: "/imagens/alfabeto/e.png",
-    correta: "P",
-    opcoes: ["E", "F", "I", "J"]
-  },
-  {
-    Imagem: "/imagens/alfabeto/e.png",
-    correta: "Q",
-    opcoes: ["E", "F", "I", "J"]
-  },
-  {
-    Imagem: "/imagens/alfabeto/e.png",
-    correta: "R",
-    opcoes: ["E", "F", "I", "J"]
-  },
-  {
-    Imagem: "/imagens/alfabeto/e.png",
-    correta: "S",
-    opcoes: ["E", "F", "I", "J"]
-  },
-  {
-    Imagem: "/imagens/alfabeto/e.png",
-    correta: "T",
-    opcoes: ["E", "F", "I", "J"]
-  },
-  {
-    Imagem: "/imagens/alfabeto/e.png",
-    correta: "U",
-    opcoes: ["E", "F", "I", "J"]
-  },
-  {
-    Imagem: "/imagens/alfabeto/e.png",
-    correta: "V",
-    opcoes: ["E", "F", "I", "J"]
-  },
-  {
-    Imagem: "/imagens/alfabeto/e.png",
-    correta: "W",
-    opcoes: ["E", "F", "I", "J"]
-  },
-  {
-    Imagem: "/imagens/alfabeto/e.png",
-    correta: "Y",
-    opcoes: ["E", "F", "I", "J"]
-  },
-  {
-    Imagem: "/imagens/alfabeto/e.png",
-    correta: "X",
-    opcoes: ["E", "F", "I", "J"]
-  },
-  {
-    Imagem: "/imagens/alfabeto/e.png",
-    correta: "Z",
-    opcoes: ["E", "F", "I", "J"]
-  },
+// Alfabeto Quiz Game
+  const perguntas = [
+  { Imagem: "/imagens/alfabeto/a.png", correta: "A", opcoes: ["A", "E", "O", "U"] },
+  { Imagem: "/imagens/alfabeto/b.png", correta: "B", opcoes: ["B", "C", "D", "F"] },
+  { Imagem: "/imagens/alfabeto/c.png", correta: "C", opcoes: ["C", "G", "F", "H"] },
+  { Imagem: "/imagens/alfabeto/d.png", correta: "D", opcoes: ["D", "L", "M", "N"] },
+  { Imagem: "/imagens/alfabeto/e.png", correta: "E", opcoes: ["E", "I", "O", "U"] },
+  { Imagem: "/imagens/alfabeto/f.png", correta: "F", opcoes: ["F", "E", "G", "H"] },
+  { Imagem: "/imagens/alfabeto/g.png", correta: "G", opcoes: ["G", "J", "C", "Q"] },
+  { Imagem: "/imagens/alfabeto/h.png", correta: "H", opcoes: ["H", "K", "L", "M"] },
+  { Imagem: "/imagens/alfabeto/i.png", correta: "I", opcoes: ["I", "E", "J", "Y"] },
+  { Imagem: "/imagens/alfabeto/j.png", correta: "J", opcoes: ["J", "I", "G", "K"] },
+  { Imagem: "/imagens/alfabeto/k.png", correta: "K", opcoes: ["K", "L", "X", "Y"] },
+  { Imagem: "/imagens/alfabeto/l.png", correta: "L", opcoes: ["L", "I", "M", "N"] },
+  { Imagem: "/imagens/alfabeto/m.png", correta: "M", opcoes: ["M", "N", "H", "W"] },
+  { Imagem: "/imagens/alfabeto/n.png", correta: "N", opcoes: ["N", "M", "U", "Z"] },
+  { Imagem: "/imagens/alfabeto/o.png", correta: "O", opcoes: ["O", "Q", "C", "D"] },
+  { Imagem: "/imagens/alfabeto/p.png", correta: "P", opcoes: ["P", "R", "B", "T"] },
+  { Imagem: "/imagens/alfabeto/q.png", correta: "Q", opcoes: ["Q", "G", "O", "C"] },
+  { Imagem: "/imagens/alfabeto/r.png", correta: "R", opcoes: ["R", "P", "S", "B"] },
+  { Imagem: "/imagens/alfabeto/s.png", correta: "S", opcoes: ["S", "C", "Z", "R"] },
+  { Imagem: "/imagens/alfabeto/t.png", correta: "T", opcoes: ["T", "F", "P", "D"] },
+  { Imagem: "/imagens/alfabeto/u.png", correta: "U", opcoes: ["U", "O", "V", "I"] },
+  { Imagem: "/imagens/alfabeto/v.png", correta: "V", opcoes: ["V", "W", "B", "F"] },
+  { Imagem: "/imagens/alfabeto/w.png", correta: "W", opcoes: ["W", "M", "V", "N"] },
+  { Imagem: "/imagens/alfabeto/x.png", correta: "X", opcoes: ["X", "K", "Y", "Z"] },
+  { Imagem: "/imagens/alfabeto/y.png", correta: "Y", opcoes: ["Y", "I", "J", "X"] },
+  { Imagem: "/imagens/alfabeto/z.png", correta: "Z", opcoes: ["Z", "S", "X", "C"] }
 ];
+
+// Função para embaralhar o array
+function embaralharArray(array) {
+  return array.sort(() => Math.random() - 0.5);
+}
+
+// Iniciar nova partida
+function novaPartida() {
+  const perguntasEmbaralhadas = embaralharArray([...perguntas]); // cópia embaralhada
+  console.log(perguntasEmbaralhadas); // teste: mostra a ordem aleatória
+  // aqui você começa o jogo com perguntasEmbaralhadas
+}
 
 let indiceAtual = 0;
 let pontuacao = 0;
