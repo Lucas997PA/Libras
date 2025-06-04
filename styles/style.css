@@ -8,11 +8,11 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  min-height: 2vh;
 }
 
 .menu-container {
-  margin-top: 10px;
+  margin-top: 100px;
   padding: 20px;
   max-width: 600px;
   margin-left: auto;
@@ -20,6 +20,7 @@ body {
   background-color: white;
   border-radius: 20px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
+
 }
 
 h1 {
@@ -49,11 +50,11 @@ h1 {
 /* Responsividade para telas pequenas */
 @media screen and (max-width: 560px) {
   .menu-container {
-    display: flex;
-    margin-top: 20px;
+
+    margin-top: 100px;
     padding: 15px;
     width:100%;
-    display: inline-flex;
+  
   
     justify-content: center;
     margin: 10px;
