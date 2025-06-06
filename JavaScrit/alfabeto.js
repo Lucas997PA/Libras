@@ -1,5 +1,5 @@
 // Alfabeto Quiz Game
-  const perguntas = [
+const perguntasOriginais = [
   { Imagem: "/imagens/alfabeto/a.png", correta: "A", opcoes: ["A", "E", "O", "U"] },
   { Imagem: "/imagens/alfabeto/b.png", correta: "B", opcoes: ["B", "C", "D", "F"] },
   { Imagem: "/imagens/alfabeto/c.png", correta: "C", opcoes: ["C", "G", "F", "H"] },
@@ -28,25 +28,32 @@
   { Imagem: "/imagens/alfabeto/z.png", correta: "Z", opcoes: ["Z", "S", "X", "C"] }
 ];
 
-// Função para embaralhar o array
+// Função para embaralhar array
 function embaralharArray(array) {
-  return array.sort(() => Math.random() - 0.5);
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
 }
 
-// Iniciar nova partida
-function novaPartida() {
-  const perguntasEmbaralhadas = embaralharArray([...perguntas]); // cópia embaralhada
-  console.log(perguntasEmbaralhadas); // teste: mostra a ordem aleatória
-  // aqui você começa o jogo com perguntasEmbaralhadas
-}
-
+// Variáveis do jogo
+let perguntas = [];
 let indiceAtual = 0;
 let pontuacao = 0;
+
+// Iniciar o jogo
+function iniciarJogo() {
+  perguntas = embaralharArray([...perguntasOriginais]);
+  indiceAtual = 0;
+  pontuacao = 0;
+  carregarPergunta();
+}
 
 function carregarPergunta() {
   const pergunta = perguntas[indiceAtual];
   document.getElementById("sinal-img").src = pergunta.Imagem;
-  
+
   const opcoesContainer = document.getElementById("opcoes");
   opcoesContainer.innerHTML = "";
   pergunta.opcoes.forEach(opcao => {
@@ -78,7 +85,6 @@ function verificarResposta(resposta) {
 
   btnProximo.style.display = "inline-block";
 
-  // Desativar botões após resposta
   const botoes = document.querySelectorAll("#opcoes button");
   botoes.forEach(btn => btn.disabled = true);
 
@@ -102,4 +108,5 @@ function atualizarPontuacao() {
   document.getElementById("pontuacao").textContent = `Pontuação: ${pontuacao} / ${perguntas.length}`;
 }
 
-carregarPergunta();
+// Inicializa o jogo quando a página carrega
+window.onload = iniciarJogo;
