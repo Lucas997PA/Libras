@@ -1,85 +1,115 @@
-/* Estilo base */
-* {
-  box-sizing: border-box;
+/* Estilo geral */
+body {
   margin: 0;
   padding: 0;
-}
-
-body {
   font-family: Arial, sans-serif;
-  text-align: center;
-  background-color: #f0f0f0;
-  min-height: 100vh;
+  background-color: #f9f9f9;
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 20px;
-}
-
-.menu-container {
-  margin-top: 40px;
-  padding: 20px;
-  width: 100%;
-  max-width: 600px;
-  background-color: rgb(255, 255, 255);
-  border-radius: 20px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-h1 {
-  font-size: 2em;
-  color: #2c3e50;
-  margin-bottom: 20px;
-}
-
-.menu-button {
-  display: inline-flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  margin: 10px;
-  padding: 15px 30px;
-  font-size: 18px;
-  text-decoration: none;
-  color: #fff;
-  background-color: #2980b9;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+/* Container principal com imagem + opções lado a lado */
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+/* Imagem do sinal em Libras */
+#sinal-img {
+  width: 300px;
+  max-width: 100%;
+  height: auto;
+  border: 2px solid #ccc;
   border-radius: 10px;
-  transition: background 0.3s;
-  width: 200px;
-  height: 50px;
+}
+
+/* Botões de opções em grade 3x2 */
+.opcoes-container {
+  display: grid;
+  grid-template-columns: repeat(2, 150px);
+  grid-gap: 20px;
+  justify-content: center;
+}
+
+/* Botão de alternativa */
+.botao-opcao {
+  background-color: #3498db;
+  color: white;
+  border: 2px solid #1f618d;
+  border-radius: 12px;
+  padding: 15px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.botao-opcao:hover {
+  background-color: #2980b9;
+}
+
+/* Botão padrão */
+.menu-button {
+  background-color: #2980b9;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 24px;
+  margin-top: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  text-decoration: none;
+  display: inline-block;
 }
 
 .menu-button:hover {
-  background-color: #0c44eb;
+  background-color: #1f618d;
 }
 
+/* Texto de feedback */
+#feedback, #pontuacao {
+  font-size: 18px;
+  color: #333;
+  margin-top: 10px;
+  text-align: center;
+}
 
 /* Responsividade para celular */
-@media screen and (max-width: 480px) {
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    gap: 20px;
+  }
 
-.menu-container {
-  align-self: center;
-  padding: 30%;
-  max-width: 700px;
-  background-color: rgb(20, 202, 53);
-  border-radius: 20px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  height: 50vh;
-  width: 100vw; /*largura da tela */
- 
-}
+  .opcoes-container {
+    grid-template-columns: repeat(2, 130px);
+    grid-gap: 15px;
+  }
 
-  h1 {
-    font-size: 1.5em;
+  #sinal-img {
+    width: 90%;
+  }
+
+  .botao-opcao {
+    font-size: 15px;
+    padding: 12px;
   }
 
   .menu-button {
-    align-items: center;
-    font-size: 16px;
-    height: auto;
-    padding: 12px;
-    right: 20px;
-    max-width: 500px;
-    margin-left: -5px;
-   
+    font-size: 15px;
+    padding: 10px 20px;
+  }
 }
+
+@media (max-width: 480px) {
+  .opcoes-container {
+    grid-template-columns: 1fr;
+  }
 }
