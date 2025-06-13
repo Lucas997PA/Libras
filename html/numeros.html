@@ -6,18 +6,30 @@
   <link rel="stylesheet" href="/styles/style.css">
 </head>
 <body>
-  <div class="menu-container">
-    <h1>Qual é o número?</h1>
-    <div id="quiz-container">
-      <img id="sinal-img" src="" alt="Sinal em Libras" width="300"><br>
-      <div id="opcoes"></div>
-      <p id="feedback"></p>
-      <p id="pontuacao"></p>
-      <button onclick="proximaPergunta()" id="btn-proximo" style="display: none;">Próxima</button>
-      <br><br>
-      <a href="jogo.html" class="menu-button">🔙 Voltar ao Menu de Categorias</a>
+  <h1>Qual é o número?</h1>
+
+  <div class="container" id="quiz-container">
+    <!-- Imagem do sinal -->
+    <img id="sinal-img" src="" alt="Sinal em Libras">
+
+    <!-- Opções em 2 colunas -->
+    <div class="opcoes-container" id="opcoes">
+      <!-- Botões de alternativas serão inseridos via JavaScript -->
     </div>
   </div>
+
+  <!-- Feedback e pontuação -->
+  <p id="feedback"></p>
+  <p id="pontuacao"></p>
+
+  <!-- Botão Próxima -->
+  <button onclick="proximaPergunta()" id="btn-proximo" class="menu-button" style="display: none;">Próxima</button>
+
+  <!-- Botão Voltar -->
+  <br><br>
+  <a href="jogo.html" class="menu-button">🔙 Voltar ao Menu</a>
+
+  <!-- JavaScript correto para números -->
   <script src="/JavaScrit/numeros.js"></script>
 </body>
 </html>
