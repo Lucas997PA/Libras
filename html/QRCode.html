@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QR Code - Compartilhe o Jogo</title>
+  <link rel="stylesheet" href="/styles/style.css">
+  <style>
+    .qrcode-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+      min-height: 100vh;
+      text-align: center;
+    }
+
+    #qrcode-img {
+      width: 250px;
+      max-width: 90%;
+      height: auto;
+      border: 2px solid #ccc;
+      border-radius: 12px;
+      margin-bottom: 20px;
+    }
+
+    .menu-button {
+      background-color: #1686dc;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      padding: 12px 24px;
+      margin-top: 10px;
+      cursor: pointer;
+      font-size: 16px;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .menu-button:hover {
+      background-color: #1f618d;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="qrcode-container">
+    <h1>Compartilhe com QR Code</h1>
+    <p>Escaneie o código abaixo para acessar o jogo em outro dispositivo:</p>
+    
+    <!-- Imagem do QR Code -->
+    <img id="qrcode-img" src="/imagens/QRCode/QRCode.png" alt="QR Code do Jogo">
+
+    <!-- Botão de voltar -->
+    <a href="/index.html" class="menu-button">🔙 Voltar ao Menu</a>
+  </div>
+
+</body>
+</html>
