@@ -9,7 +9,8 @@ const perguntasNumeros = [
   { Imagem: "/imagens/numeros/6.png", correta: "6", opcoes: ["6", "5", "8", "4"] },
   { Imagem: "/imagens/numeros/7.png", correta: "7", opcoes: ["7", "1", "0", "9"] },
   { Imagem: "/imagens/numeros/8.png", correta: "8", opcoes: ["8", "2", "6", "3"] },
-  { Imagem: "/imagens/numeros/9.png", correta: "9", opcoes: ["9", "8", "7", "5"] }
+  { Imagem: "/imagens/numeros/9.png", correta: "9", opcoes: ["9", "8", "7", "5"] },
+  { Imagem: "/imagens/numeros/10.gif", correta: "10", opcoes: ["10", "8", "7", "5"] }
 ];
 
 // Embaralhar array
