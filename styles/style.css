@@ -17,9 +17,10 @@ body {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 40px;
+  gap: 60px;
   flex-wrap: wrap;
-  padding: 100px;;
+  padding: 100px;
+  height: 45vh;
 }
 
 /* Imagem do sinal em Libras */
@@ -31,7 +32,7 @@ body {
   border-radius: 10px;
 }
 
-/* Botões de opções em grade 3x2 */
+/* Botões de opções em grade 2 colunas */
 .opcoes-container {
   display: grid;
   grid-template-columns: repeat(2, 150px);
@@ -55,7 +56,7 @@ body {
   background-color: #2980b9;
 }
 
-/* Botão padrão todos os botao*/
+/* Botão padrão */
 .menu-button {
   background-color: #1686dc;
   color: white;
@@ -66,8 +67,7 @@ body {
   cursor: pointer;
   font-size: 16px;
   text-decoration: none;
-  display: block; /* alinhamento dos botaoa */
-  
+  display: block;
 }
 
 .menu-button:hover {
@@ -82,14 +82,16 @@ body {
   text-align: center;
 }
 
-/* Responsividade para celular */
-/* Responsivo para telas menores (celulares e tablets) */
+/* Responsivo para tablets */
 @media screen and (max-width: 768px) {
-  /* Botão padrão */
+  .container {
+    flex-direction: column;
+    padding: 40px;
+    height: auto;
+  }
 
-  .menu-container {
-    padding: 100px;
-    
+  .opcoes-container {
+    grid-template-columns: repeat(2, 120px);
   }
 
   h1 {
@@ -104,46 +106,38 @@ body {
   }
 }
 
-@media (max-width: 480px) {
-body {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-  background-color: #f9f9f9;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  min-height: 100vh;
-  
-}
-
-  h1 {
-    font-size: 1.4em;
-  }
-
-  
-  .botao-opcao {
-    font-size: 15px;
-    padding: 10px;
-    margin: 8px 0;
-    width: 100%;
-    box-sizing: border-box;
-    background-color: #6ad016;
+/* Responsivo para celulares */
+@media screen and (max-width: 480px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 20px;
+    height: auto;
   }
 
   #sinal-img {
     width: 90%;
-    max-width: 300px;
-    height: auto;
+    max-width: 250px;
+  
   }
 
-  #opcoes,
   .opcoes-container {
     display: flex;
     flex-direction: column;
-    gap: 100px;
+    gap: 15px;
     width: 100%;
-
+    align-items: center;
   }
 
+  .botao-opcao {
+    width: 80%;
+    font-size: 16px;
+    padding: 12px;
+  }
+
+  h1 {
+    font-size: 1.5em;
+    text-align: center;
+  }
 }

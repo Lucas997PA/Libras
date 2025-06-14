@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Quiz - Cores em Libras</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 60px;
+      flex-wrap: wrap;
+      padding: 100px;
+      height: 45vh;
+    }
+
+    #sinal-img {
+      width: 300px;
+      max-width: 100%;
+      height: auto;
+      border: 2px solid #ccc;
+      border-radius: 10px;
+    }
+
+    .opcoes-container {
+      display: grid;
+      grid-template-columns: repeat(2, 150px);
+      grid-gap: 20px;
+      justify-content: center;
+    }
+
+    .botao-opcao {
+      background-color: #073a5d;
+      color: white;
+      border: 2px solid #1f618d;
+      border-radius: 12px;
+      padding: 15px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .botao-opcao:hover {
+      background-color: #2980b9;
+    }
+
+    .menu-button {
+      background-color: #1686dc;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      padding: 12px 24px;
+      margin-top: 10px;
+      cursor: pointer;
+      font-size: 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .menu-button:hover {
+      background-color: #1f618d;
+    }
+
+    #feedback, #pontuacao {
+      font-size: 18px;
+      color: #333;
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    @media screen and (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        padding: 40px;
+        height: auto;
+      }
+
+      .opcoes-container {
+        grid-template-columns: repeat(2, 120px);
+      }
+
+      h1 {
+        font-size: 1.8em;
+      }
+
+      .menu-button {
+        font-size: 16px;
+        width: 100%;
+        max-width: 300px;
+        padding: 12px;
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      .container {
+        flex-direction: column;
+        gap: 30px;
+        padding: 20px;
+        height: auto;
+      }
+
+      #sinal-img {
+        width: 90%;
+        max-width: 250px;
+      }
+
+      .opcoes-container {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+        align-items: center;
+      }
+
+      .botao-opcao {
+        width: 80%;
+        font-size: 16px;
+        padding: 12px;
+      }
+
+      h1 {
+        font-size: 1.5em;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Qual é a cor?</h1>
+
+  <div class="container" id="quiz-container">
+    <img id="sinal-img" src="https://via.placeholder.com/300" alt="Sinal de cor em Libras">
+    
+    <div class="opcoes-container" id="opcoes">
+      <button class="botao-opcao">Vermelho</button>
+      <button class="botao-opcao">Azul</button>
+      <button class="botao-opcao">Amarelo</button>
+      <button class="botao-opcao">Verde</button>
+    </div>
+  </div>
+
+  <p id="feedback"></p>
+  <p id="pontuacao"></p>
+
+  <button onclick="alert('Próxima!')" id="btn-proximo" class="menu-button">Próxima</button>
+  <br>
+  <a href="jogo.html" class="menu-button">🔙 Voltar ao Menu</a>
+</body>
+</html>
