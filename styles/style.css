@@ -7,7 +7,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start; /* <-- alinhamento mais para o topo */
   min-height: 100vh;
 }
 
@@ -19,8 +19,8 @@ body {
   justify-content: center;
   gap: 60px;
   flex-wrap: wrap;
-  padding: 100px;
-  height: 45vh;
+  padding: 40px 20px;  /* <-- reduzido o padding superior */
+  margin-top: 10px;    /* <-- aproxima da pergunta */
 }
 
 /* Imagem do sinal em Libras */
@@ -87,7 +87,6 @@ body {
   .container {
     flex-direction: column;
     padding: 40px;
-    height: auto;
   }
 
   .opcoes-container {
@@ -113,13 +112,11 @@ body {
     flex-direction: column;
     gap: 30px;
     padding: 20px;
-    height: auto;
   }
 
   #sinal-img {
     width: 90%;
     max-width: 250px;
-  
   }
 
   .opcoes-container {
