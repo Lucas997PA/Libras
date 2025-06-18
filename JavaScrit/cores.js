@@ -1,15 +1,15 @@
 // Perguntas de Cores em Libras
 const perguntasCores = [
-  { Imagem: "/imagens/cores/vermelho.png", correta: "Vermelho", opcoes: ["Vermelho", "Azul", "Amarelo", "Verde"] },
-  { Imagem: "/imagens/cores/azul.png", correta: "Azul", opcoes: ["Azul", "Rosa", "Vermelho", "Laranja"] },
-  { Imagem: "/imagens/cores/amarelo.png", correta: "Amarelo", opcoes: ["Amarelo", "Marrom", "Azul", "Cinza"] },
-  { Imagem: "/imagens/cores/verde.png", correta: "Verde", opcoes: ["Verde", "Preto", "Branco", "Roxo"] },
-  { Imagem: "/imagens/cores/rosa.png", correta: "Rosa", opcoes: ["Rosa", "Azul", "Cinza", "Laranja"] },
-  { Imagem: "/imagens/cores/preto.png", correta: "Preto", opcoes: ["Preto", "Branco", "Cinza", "Marrom"] },
-  { Imagem: "/imagens/cores/branco.png", correta: "Branco", opcoes: ["Branco", "Preto", "Roxo", "Amarelo"] },
-  { Imagem: "/imagens/cores/laranja.png", correta: "Laranja", opcoes: ["Laranja", "Vermelho", "Marrom", "Azul"] },
-  { Imagem: "/imagens/cores/roxo.png", correta: "Roxo", opcoes: ["Roxo", "Rosa", "Cinza", "Verde"] },
-  { Imagem: "/imagens/cores/cinza.png", correta: "Cinza", opcoes: ["Cinza", "Branco", "Preto", "Roxo"] }
+  { Imagem: "/imagens/cores/vermelho.gif", correta: "Vermelho", opcoes: ["Vermelho", "Azul", "Amarelo", "Verde"] },
+  { Imagem: "/imagens/cores/azul.gif", correta: "Azul", opcoes: ["Azul", "Rosa", "Vermelho", "Laranja"] },
+  { Imagem: "/imagens/cores/amarelo.gif", correta: "Amarelo", opcoes: ["Amarelo", "Marrom", "Azul", "Cinza"] },
+  { Imagem: "/imagens/cores/verde.gif", correta: "Verde", opcoes: ["Verde", "Preto", "Branco", "Roxo"] },
+  { Imagem: "/imagens/cores/rosa.gif", correta: "Rosa", opcoes: ["Rosa", "Azul", "Cinza", "Laranja"] },
+  { Imagem: "/imagens/cores/preto.gif", correta: "Preto", opcoes: ["Preto", "Branco", "Cinza", "Marrom"] },
+  { Imagem: "/imagens/cores/branco.gif", correta: "Branco", opcoes: ["Branco", "Preto", "Roxo", "Amarelo"] },
+  { Imagem: "/imagens/cores/laranja.gif", correta: "Laranja", opcoes: ["Laranja", "Vermelho", "Marrom", "Azul"] },
+  { Imagem: "/imagens/cores/roxo.gif", correta: "Roxo", opcoes: ["Roxo", "Rosa", "Cinza", "Verde"] },
+  { Imagem: "/imagens/cores/cinza.gif", correta: "Cinza", opcoes: ["Cinza", "Branco", "Preto", "Roxo"] }
 ];
 
 // Embaralhar perguntas
