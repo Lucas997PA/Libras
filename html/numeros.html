@@ -7,28 +7,24 @@
   <link rel="stylesheet" href="/styles/style.css">
 </head>
 <body>
+  <div class="top-bar">
+    <button onclick="window.location.href='jogo.html'" class="menu-button">Menu</button>
+    <div id="vidas">Vidas: ❤️ ❤️ ❤️</div>
+    <div id="tempo">Tempo: 60s</div>
+    <div id="status">1 de 11</div>
+    <div id="acertos">Acertos: 00</div>
+  </div>
+
   <h1>Qual é o número?</h1>
 
   <div class="container" id="quiz-container">
-    <!-- Imagem do sinal -->
     <img id="sinal-img" src="" alt="Sinal em Libras">
-
-    <!-- Opções em 2 colunas -->
-    <div class="opcoes-container" id="opcoes">
-      <!-- Botões de alternativas serão inseridos via JavaScript -->
-    </div>
+    <div class="opcoes-container" id="opcoes"></div>
   </div>
 
-  <!-- Feedback e pontuação -->
   <p id="feedback"></p>
-  <p id="pontuacao"></p>
+  
 
-  <!-- Botão Próxima -->
-  <button onclick="proximaPergunta()" id="btn-proximo" class="menu-button" style="display: none;">Próxima</button>
-
-  <!-- Botão Voltar -->
-  <br><br>
-  <a href="jogo.html" class="menu-button">🔙 Voltar ao Menu</a>
 
   <!-- JavaScript correto para números -->
   <script src="/JavaScrit/numeros.js"></script>

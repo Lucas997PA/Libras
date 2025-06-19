@@ -7,8 +7,53 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start; /* <-- alinhamento mais para o topo */
+  justify-content: flex-start;
   min-height: 100vh;
+}
+
+/* Barra superior com Menu, Tempo, Vidas, Progresso, Acertos */
+.top-bar {
+  width: 100%;
+  background-color: #0404e0bc;
+  padding: 10px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.top-bar .left-section,
+.top-bar .right-section {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.top-bar .middle-section {
+  text-align: center;
+  flex: 1;
+}
+
+.top-bar button,
+.top-bar .menu-button {
+  background-color: #1686dc;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 8px 16px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.top-bar .vidas {
+  color: red;
+  font-size: 20px;
+}
+
+#timer {
+  font-weight: bold;
 }
 
 /* Container principal com imagem + opções lado a lado */
@@ -19,8 +64,8 @@ body {
   justify-content: center;
   gap: 60px;
   flex-wrap: wrap;
-  padding: 40px 20px;  /* <-- reduzido o padding superior */
-  margin-top: 10px;    /* <-- aproxima da pergunta */
+  padding: 40px 20px;
+  margin-top: 10px;
 }
 
 /* Imagem do sinal em Libras */
@@ -103,34 +148,22 @@ body {
     max-width: 300px;
     padding: 12px;
   }
+
+  .top-bar {
+    flex-direction: column;
+    gap: 10px;
+    text-align: justify;
+  }
+
+  .top-bar .left-section,
+  .top-bar .right-section {
+    justify-content: center;
+  }
 }
-
-                                   /* QRCode */
-
-  .qrcode-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 40px 20px;
-      min-height: 100vh;
-      text-align: center;
-    }
-
-    #qrcode-img {
-      width: 250px;
-      max-width: 90%;
-      height: auto;
-      border: 2px solid #ccc;
-      border-radius: 12px;
-      margin-bottom: 20px;
-    }
-
 
 /* Responsivo para celulares */
 @media screen and (max-width: 480px) {
   .container {
-    display: flex;
     flex-direction: column;
     gap: 30px;
     padding: 20px;
@@ -159,4 +192,24 @@ body {
     font-size: 1.5em;
     text-align: center;
   }
+}
+
+/* QRCode container */
+.qrcode-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  min-height: 100vh;
+  text-align: center;
+}
+
+#qrcode-img {
+  width: 250px;
+  max-width: 90%;
+  height: auto;
+  border: 2px solid #ccc;
+  border-radius: 12px;
+  margin-bottom: 20px;
 }

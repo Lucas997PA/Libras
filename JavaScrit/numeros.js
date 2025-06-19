@@ -1,84 +1,103 @@
-// Perguntas dos Números
-const perguntasNumeros = [
-  { Imagem: "/imagens/numeros/0.png", correta: "0", opcoes: ["0", "1", "2", "3"] },
-  { Imagem: "/imagens/numeros/1.png", correta: "1", opcoes: ["1", "0", "4", "7"] },
-  { Imagem: "/imagens/numeros/2.png", correta: "2", opcoes: ["2", "3", "5", "9"] },
-  { Imagem: "/imagens/numeros/3.png", correta: "3", opcoes: ["3", "6", "4", "1"] },
-  { Imagem: "/imagens/numeros/4.png", correta: "4", opcoes: ["4", "2", "0", "7"] },
-  { Imagem: "/imagens/numeros/5.png", correta: "5", opcoes: ["5", "3", "9", "6"] },
-  { Imagem: "/imagens/numeros/6.png", correta: "6", opcoes: ["6", "5", "8", "4"] },
-  { Imagem: "/imagens/numeros/7.png", correta: "7", opcoes: ["7", "1", "0", "9"] },
-  { Imagem: "/imagens/numeros/8.png", correta: "8", opcoes: ["8", "2", "6", "3"] },
-  { Imagem: "/imagens/numeros/9.png", correta: "9", opcoes: ["9", "8", "7", "5"] },
-  { Imagem: "/imagens/numeros/10.gif", correta: "10", opcoes: ["10", "8", "7", "5"] }
-];
+const perguntas = [
+      { Imagem: "/imagens/numeros/0.png", correta: "0", opcoes: ["0", "1", "2", "3"] },
+      { Imagem: "/imagens/numeros/1.png", correta: "1", opcoes: ["1", "0", "4", "7"] },
+      { Imagem: "/imagens/numeros/2.png", correta: "2", opcoes: ["2", "3", "5", "9"] },
+      { Imagem: "/imagens/numeros/3.png", correta: "3", opcoes: ["3", "6", "4", "1"] },
+      { Imagem: "/imagens/numeros/4.png", correta: "4", opcoes: ["4", "2", "0", "7"] },
+      { Imagem: "/imagens/numeros/5.png", correta: "5", opcoes: ["5", "3", "9", "6"] },
+      { Imagem: "/imagens/numeros/6.png", correta: "6", opcoes: ["6", "5", "8", "4"] },
+      { Imagem: "/imagens/numeros/7.png", correta: "7", opcoes: ["7", "1", "0", "9"] },
+      { Imagem: "/imagens/numeros/8.png", correta: "8", opcoes: ["8", "2", "6", "3"] },
+      { Imagem: "/imagens/numeros/9.png", correta: "9", opcoes: ["9", "8", "7", "5"] },
+      { Imagem: "/imagens/numeros/10.gif", correta: "10", opcoes: ["10", "8", "7", "5"] }
+    ];
 
-// Embaralhar array
-function embaralharArray(array) {
-  return array.sort(() => Math.random() - 0.5);
-}
+    let indiceAtual = 0;
+    let pontuacao = 0;
+    let vidas = 3;
+    let tempo = 60;
+    let timer;
 
-let perguntas = embaralharArray([...perguntasNumeros]);
-let indiceAtual = 0;
-let pontuacao = 0;
+    function iniciarTimer() {
+      tempo = 60;
+      document.getElementById("tempo").textContent = `Tempo: ${tempo}s`;
+      clearInterval(timer);
+      timer = setInterval(() => {
+        tempo--;
+        document.getElementById("tempo").textContent = `Tempo: ${tempo}s`;
+        if (tempo <= 0) perderVida();
+      }, 1000);
+    }
 
-function carregarPergunta() {
-  const pergunta = perguntas[indiceAtual];
-  document.getElementById("sinal-img").src = pergunta.Imagem;
+    function perderVida() {
+      vidas--;
+      atualizarVidas();
+      if (vidas <= 0) fimDoJogo("😵 Suas vidas acabaram!");
+      else proximaPergunta();
+    }
 
-  const opcoesContainer = document.getElementById("opcoes");
-  opcoesContainer.innerHTML = "";
-  pergunta.opcoes.forEach(opcao => {
-    const botao = document.createElement("button");
-    botao.textContent = opcao;
-    botao.onclick = () => verificarResposta(opcao);
-    botao.classList.add("menu-button");
-    opcoesContainer.appendChild(botao);
-  });
+    function atualizarVidas() {
+      document.getElementById("vidas").textContent = `Vidas: ${"❤️ ".repeat(vidas).trim()}`;
+    }
 
-  document.getElementById("feedback").textContent = "";
-  document.getElementById("btn-proximo").style.display = "none";
-  atualizarPontuacao();
-}
+    function carregarPergunta() {
+      const pergunta = perguntas[indiceAtual];
+      document.getElementById("sinal-img").src = pergunta.Imagem;
+      document.getElementById("status").textContent = `${indiceAtual + 1} de ${perguntas.length}`;
+      document.getElementById("acertos").textContent = `Acertos: ${pontuacao.toString().padStart(2, '0')}`;
 
-function verificarResposta(resposta) {
-  const pergunta = perguntas[indiceAtual];
-  const feedback = document.getElementById("feedback");
-  const btnProximo = document.getElementById("btn-proximo");
+      const opcoesContainer = document.getElementById("opcoes");
+      opcoesContainer.innerHTML = "";
+      pergunta.opcoes.forEach(opcao => {
+        const botao = document.createElement("button");
+        botao.textContent = opcao;
+        botao.onclick = () => verificarResposta(opcao);
+        botao.classList.add("menu-button");
+        opcoesContainer.appendChild(botao);
+      });
 
-  if (resposta === pergunta.correta) {
-    feedback.textContent = "✅ Resposta correta!";
-    feedback.style.color = "green";
-    pontuacao++;
-  } else {
-    feedback.textContent = `❌ Resposta errada. A resposta certa é: ${pergunta.correta}`;
-    feedback.style.color = "red";
-  }
+      document.getElementById("feedback").textContent = "";
+      iniciarTimer();
+    }
 
-  btnProximo.style.display = "inline-block";
+    function verificarResposta(resposta) {
+      clearInterval(timer);
+      const pergunta = perguntas[indiceAtual];
+      const feedback = document.getElementById("feedback");
 
-  const botoes = document.querySelectorAll("#opcoes button");
-  botoes.forEach(btn => btn.disabled = true);
+      if (resposta === pergunta.correta) {
+        feedback.textContent = "✅ Resposta correta!";
+        feedback.style.color = "green";
+        pontuacao++;
+        setTimeout(proximaPergunta, 1200);
+      } else {
+        feedback.textContent = `❌ Resposta errada. A resposta certa é: ${pergunta.correta}`;
+        feedback.style.color = "red";
+        setTimeout(perderVida, 1200);
+      }
 
-  atualizarPontuacao();
-}
+      const botoes = document.querySelectorAll("#opcoes button");
+      botoes.forEach(btn => btn.disabled = true);
+      atualizarPontuacao();
+    }
 
-function proximaPergunta() {
-  indiceAtual++;
-  if (indiceAtual < perguntas.length) {
+    function proximaPergunta() {
+      indiceAtual++;
+      if (indiceAtual < perguntas.length && vidas > 0) carregarPergunta();
+      else fimDoJogo("🎉 Fim do jogo!");
+    }
+
+    function fimDoJogo(mensagem) {
+      clearInterval(timer);
+      document.getElementById("quiz-container").innerHTML = `
+        <h2>${mensagem}</h2>
+        <p>Sua pontuação final: ${pontuacao} de ${perguntas.length}</p>
+        <a href="jogo.html" class="menu-button">🔙 Voltar ao Menu</a>
+      `;
+    }
+
+    function atualizarPontuacao() {
+      document.getElementById("pontuacao").textContent = `Pontuação: ${pontuacao} / ${perguntas.length}`;
+    }
+
     carregarPergunta();
-  } else {
-    document.getElementById("quiz-container").innerHTML = `
-      <h2>Fim do jogo!</h2>
-      <p>Sua pontuação final: ${pontuacao} de ${perguntas.length}</p>
-      <a href="jogo.html" class="menu-button">🔙 Voltar ao Menu de Categorias</a>
-    `;
-  }
-}
-
-function atualizarPontuacao() {
-  document.getElementById("pontuacao").textContent = `Pontuação: ${pontuacao} / ${perguntas.length}`;
-}
-
-// Inicia o quiz automaticamente
-carregarPergunta();
