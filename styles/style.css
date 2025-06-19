@@ -14,21 +14,21 @@ body {
 /* Barra superior com Menu, Tempo, Vidas, Progresso, Acertos */
 .top-bar {
   width: 100%;
-  background-color: #0404e0bc;
+  background-color: #089483bc;
   padding: 10px 20px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   border-bottom: 1px solid #ccc;
-  font-size: 16px;
+  font-size: 20px;
 }
 
 .top-bar .left-section,
 .top-bar .right-section {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 5px;
 }
 
 .top-bar .middle-section {
@@ -62,10 +62,10 @@ body {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 60px;
+  gap: 20px;
   flex-wrap: wrap;
   padding: 40px 20px;
-  margin-top: 10px;
+  
 }
 
 /* Imagem do sinal em Libras */
@@ -81,9 +81,11 @@ body {
 .opcoes-container {
   display: grid;
   grid-template-columns: repeat(2, 150px);
-  grid-gap: 20px;
+  grid-template-rows: repeat(2, 100px);
+  grid-gap: 12px;
   justify-content: center;
 }
+
 
 /* Botão de alternativa */
 .botao-opcao {
@@ -113,10 +115,12 @@ body {
   font-size: 16px;
   text-decoration: none;
   display: block;
+
+  
 }
 
 .menu-button:hover {
-  background-color: #1f618d;
+  background-color: #094f7e;
 }
 
 /* Texto de feedback */
@@ -157,7 +161,7 @@ body {
 
   .top-bar .left-section,
   .top-bar .right-section {
-    justify-content: center;
+    justify-content: space-around;
   }
 }
 

@@ -9,22 +9,24 @@
 <body>
   <div class="top-bar">
     <button onclick="window.location.href='jogo.html'" class="menu-button">Menu</button>
+    <button id="btn-proximo" class="menu-button" onclick="proximaPergunta()" style="display: none;">Próxima</button>
     <div id="vidas">Vidas: ❤️ ❤️ ❤️</div>
     <div id="tempo">Tempo: 60s</div>
     <div id="status">1 de 11</div>
     <div id="acertos">Acertos: 00</div>
+    <!-- <button id="btn-proximo" class="menu-button" onclick="proximaPergunta()" style="display: none;">Próxima</button> -->
   </div>
 
   <h1>Qual é o número?</h1>
+  <p id="feedback"> </p>  <!--  se errou ou acertou, o feedback será mostrado aqui. -->
 
   <div class="container" id="quiz-container">
     <img id="sinal-img" src="" alt="Sinal em Libras">
     <div class="opcoes-container" id="opcoes"></div>
   </div>
 
-  <p id="feedback"></p>
-  
-
+  <!-- <p id="feedback"> </p>  -->
+  <button id="btn-proximo" class="menu-button" onclick="proximaPergunta()" style="display: none;">Próxima</button>
 
   <!-- JavaScript correto para números -->
   <script src="/JavaScrit/numeros.js"></script>
