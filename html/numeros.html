@@ -5,30 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Quiz - Números em Libras</title>
   <link rel="stylesheet" href="/styles/style.css">
+  
 </head>
 <body>
   <div class="top-bar">
     <button onclick="window.location.href='jogo.html'" class="menu-button">Menu</button>
-    <button id="btn-proximo" class="menu-button" onclick="proximaPergunta()" style="display: none;">Próxima</button>
     <div id="vidas">Vidas: ❤️ ❤️ ❤️</div>
     <div id="tempo">Tempo: 60s</div>
     <div id="status">1 de 11</div>
     <div id="acertos">Acertos: 00</div>
-    <!-- <button id="btn-proximo" class="menu-button" onclick="proximaPergunta()" style="display: none;">Próxima</button> -->
   </div>
 
   <h1>Qual é o número?</h1>
-  <p id="feedback"> </p>  <!--  se errou ou acertou, o feedback será mostrado aqui. -->
+  <p id="feedback"></p> <!-- Feedback de acerto ou erro -->
 
   <div class="container" id="quiz-container">
     <img id="sinal-img" src="" alt="Sinal em Libras">
     <div class="opcoes-container" id="opcoes"></div>
   </div>
 
-  <!-- <p id="feedback"> </p>  -->
-  <button id="btn-proximo" class="menu-button" onclick="proximaPergunta()" style="display: none;">Próxima</button>
+  <!-- Botão sempre visível, mas desativado inicialmente -->
+  <button id="btn-proximo" class="menu-button" onclick="proximaPergunta()" disabled>Próximo</button>
 
-  <!-- JavaScript correto para números -->
+  <!-- JavaScript correto para o quiz -->
   <script src="/JavaScrit/numeros.js"></script>
 </body>
 </html>

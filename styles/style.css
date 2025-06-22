@@ -131,6 +131,25 @@ body {
   text-align: center;
 }
 
+/* Botão de proximo*/
+/* Estilo específico para o botão "Próximo" desabilitado */
+  #btn-proximo:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+
+    #btn-proximo.btn-ativo {
+      background-color: #1686dc;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    #btn-proximo.btn-ativo:hover {
+      background-color: #094f7e;
+    }
+
+
 /* Responsivo para tablets */
 @media screen and (max-width: 768px) {
   .container {
@@ -154,14 +173,14 @@ body {
   }
 
   .top-bar {
-    flex-direction: column;
+    flex-direction: line;
     gap: 10px;
     text-align: justify;
   }
 
   .top-bar .left-section,
   .top-bar .right-section {
-    justify-content: space-around;
+    justify-content: justify;
   }
 }
 

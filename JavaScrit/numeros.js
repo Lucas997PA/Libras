@@ -33,7 +33,7 @@ function perderVida() {
   vidas--;
   atualizarVidas();
   if (vidas <= 0) fimDoJogo("😵 Suas vidas acabaram!");
-  else mostrarBotaoProximo(); // Só avança com clique
+  else liberarBotaoProximo();
 }
 
 function atualizarVidas() {
@@ -46,10 +46,13 @@ function carregarPergunta() {
   document.getElementById("status").textContent = `${indiceAtual + 1} de ${perguntas.length}`;
   document.getElementById("acertos").textContent = `Acertos: ${pontuacao.toString().padStart(2, '0')}`;
   document.getElementById("feedback").textContent = "";
-  document.getElementById("btn-proximo").style.display = "none";
 
   const opcoesContainer = document.getElementById("opcoes");
   opcoesContainer.innerHTML = "";
+
+  const botaoProximo = document.getElementById("btn-proximo");
+  botaoProximo.disabled = true;
+  botaoProximo.classList.remove("btn-ativo");
 
   pergunta.opcoes.forEach(opcao => {
     const botao = document.createElement("button");
@@ -81,14 +84,16 @@ function verificarResposta(resposta) {
     atualizarVidas();
   }
 
-  if (vidas <= 0) fimDoJogo("😵 Suas vidas acabaram!");
-  else mostrarBotaoProximo();
-
   atualizarPontuacao();
+
+  if (vidas <= 0) fimDoJogo("😵 Suas vidas acabaram!");
+  else liberarBotaoProximo();
 }
 
-function mostrarBotaoProximo() {
-  document.getElementById("btn-proximo").style.display = "inline-block";
+function liberarBotaoProximo() {
+  const botao = document.getElementById("btn-proximo");
+  botao.disabled = false;
+  botao.classList.add("btn-ativo");
 }
 
 function proximaPergunta() {
@@ -112,8 +117,11 @@ function fimDoJogo(mensagem) {
 }
 
 function atualizarPontuacao() {
-  document.getElementById("pontuacao") &&
-    (document.getElementById("pontuacao").textContent = `Pontuação: ${pontuacao} / ${perguntas.length}`);
+  const pontuacaoEl = document.getElementById("pontuacao");
+  if (pontuacaoEl) {
+    pontuacaoEl.textContent = `Pontuação: ${pontuacao} / ${perguntas.length}`;
+  }
 }
 
+// Iniciar a primeira pergunta
 carregarPergunta();
