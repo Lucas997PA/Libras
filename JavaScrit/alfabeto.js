@@ -1,5 +1,5 @@
-// Alfabeto Quiz Game
-const perguntasOriginais = [
+/***** 1. Banco de perguntas (Alfabeto em Libras) *****/
+const perguntasBase = [
   { Imagem: "/imagens/alfabeto/a.png", correta: "A", opcoes: ["A", "E", "O", "U"] },
   { Imagem: "/imagens/alfabeto/b.png", correta: "B", opcoes: ["B", "C", "D", "F"] },
   { Imagem: "/imagens/alfabeto/c.png", correta: "C", opcoes: ["C", "G", "F", "H"] },
@@ -28,85 +28,128 @@ const perguntasOriginais = [
   { Imagem: "/imagens/alfabeto/z.png", correta: "Z", opcoes: ["Z", "S", "X", "C"] }
 ];
 
-// Função para embaralhar array
-function embaralharArray(array) {
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
-  }
-  return array;
+/***** 2. Função para embaralhar *****/
+function embaralharArray(arr) {
+  return arr.sort(() => Math.random() - 0.5);
 }
 
-// Variáveis do jogo
-let perguntas = [];
+/***** 3. Variáveis de controle *****/
+let perguntas   = embaralharArray([...perguntasBase]);
 let indiceAtual = 0;
-let pontuacao = 0;
+let pontuacao   = 0;
+let vidas       = 3;
+let tempo       = 60;
+let timer;
 
-// Iniciar o jogo
-function iniciarJogo() {
-  perguntas = embaralharArray([...perguntasOriginais]);
-  indiceAtual = 0;
-  pontuacao = 0;
-  carregarPergunta();
+/* ============ REGRAS DO JOGO ============ */
+function iniciarTimer() {
+  tempo = 60;
+  document.getElementById("tempo").textContent = `Tempo: ${tempo}s`;
+  clearInterval(timer);
+  timer = setInterval(() => {
+    tempo--;
+    document.getElementById("tempo").textContent = `Tempo: ${tempo}s`;
+    if (tempo <= 0) perderVida();
+  }, 1000);
 }
 
+function perderVida() {
+  vidas--;
+  atualizarVidas();
+  if (vidas <= 0) fimDoJogo("😵 Suas vidas acabaram!");
+  else liberarBotaoProximo();
+}
+
+function atualizarVidas() {
+  document.getElementById("vidas").textContent =
+    `Vidas: ${"❤️ ".repeat(vidas).trim()}`;
+}
+
+/* ---------- Carrega a pergunta atual ---------- */
 function carregarPergunta() {
   const pergunta = perguntas[indiceAtual];
-  document.getElementById("sinal-img").src = pergunta.Imagem;
+
+  document.getElementById("sinal-img").src   = pergunta.Imagem;
+  document.getElementById("status").textContent  = 
+    `${indiceAtual + 1} de ${perguntas.length}`;
+  document.getElementById("acertos").textContent = 
+    `Acertos: ${pontuacao.toString().padStart(2, "0")}`;
+  document.getElementById("feedback").textContent = "";
+
+  const btnProx = document.getElementById("btn-proximo");
+  btnProx.disabled = true;
+  btnProx.classList.remove("btn-ativo");
 
   const opcoesContainer = document.getElementById("opcoes");
   opcoesContainer.innerHTML = "";
-  pergunta.opcoes.forEach(opcao => {
-    const botao = document.createElement("button");
-    botao.textContent = opcao;
-    botao.onclick = () => verificarResposta(opcao);
-    botao.classList.add("menu-button");
-    opcoesContainer.appendChild(botao);
+  pergunta.opcoes.forEach(op => {
+    const b = document.createElement("button");
+    b.textContent = op;
+    b.classList.add("menu-button");
+    b.onclick = () => verificarResposta(op);
+    opcoesContainer.appendChild(b);
   });
 
-  document.getElementById("feedback").textContent = "";
-  document.getElementById("btn-proximo").style.display = "none";
-  atualizarPontuacao();
+  iniciarTimer();
 }
 
+/* ---------- Verifica resposta ---------- */
 function verificarResposta(resposta) {
+  clearInterval(timer);
+
   const pergunta = perguntas[indiceAtual];
   const feedback = document.getElementById("feedback");
-  const btnProximo = document.getElementById("btn-proximo");
+
+  document.querySelectorAll("#opcoes button")
+          .forEach(btn => btn.disabled = true);
 
   if (resposta === pergunta.correta) {
     feedback.textContent = "✅ Resposta correta!";
     feedback.style.color = "green";
     pontuacao++;
   } else {
-    feedback.textContent = `❌ Resposta errada. A resposta certa é: ${pergunta.correta}`;
+    feedback.textContent = `❌ Resposta errada. A certa é: ${pergunta.correta}`;
     feedback.style.color = "red";
+    vidas--;
+    atualizarVidas();
   }
-
-  btnProximo.style.display = "inline-block";
-
-  const botoes = document.querySelectorAll("#opcoes button");
-  botoes.forEach(btn => btn.disabled = true);
 
   atualizarPontuacao();
+
+  if (vidas <= 0) fimDoJogo("😵 Suas vidas acabaram!");
+  else liberarBotaoProximo();
 }
 
+/* ---------- Libera botão Próximo ---------- */
+function liberarBotaoProximo() {
+  const btn = document.getElementById("btn-proximo");
+  btn.disabled = false;
+  btn.classList.add("btn-ativo");
+}
+
+/* ---------- Avança ou finaliza ---------- */
 function proximaPergunta() {
   indiceAtual++;
-  if (indiceAtual < perguntas.length) {
-    carregarPergunta();
-  } else {
-    document.getElementById("quiz-container").innerHTML = `
-      <h2>Fim do jogo!</h2>
-      <p>Sua pontuação final: ${pontuacao} de ${perguntas.length}</p>
-      <a href="jogo.html" class="menu-button">🔙 Voltar ao Menu de Categorias</a>
-    `;
-  }
+  if (indiceAtual < perguntas.length && vidas > 0) carregarPergunta();
+  else fimDoJogo("🎉 Fim do jogo!");
+}
+
+/* ---------- Tela de fim ---------- */
+function fimDoJogo(msg) {
+  clearInterval(timer);
+  document.getElementById("quiz-container").innerHTML = `
+    <h2>${msg}</h2>
+    <p>Sua pontuação final: ${pontuacao} de ${perguntas.length}</p>
+    <a href="jogo.html" class="menu-button">🔙 Voltar ao Menu</a>
+  `;
+  document.getElementById("feedback").textContent = "";
+  document.getElementById("btn-proximo").style.display = "none";
 }
 
 function atualizarPontuacao() {
-  document.getElementById("pontuacao").textContent = `Pontuação: ${pontuacao} / ${perguntas.length}`;
+  const p = document.getElementById("pontuacao");
+  if (p) p.textContent = `Pontuação: ${pontuacao} / ${perguntas.length}`;
 }
 
-// Inicializa o jogo quando a página carrega
-window.onload = iniciarJogo;
+/* ---------- Iniciar jogo ---------- */
+carregarPergunta();

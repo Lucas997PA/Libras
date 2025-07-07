@@ -3,31 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quiz - Dias da Semana em Libras</title>
+  <title>Quiz - Números em Libras</title>
   <link rel="stylesheet" href="/styles/style.css">
+  
 </head>
 <body>
-  <h1>Que dia da semana é esse?</h1>
+  <div class="top-bar">
+    <button onclick="window.location.href='jogo.html'" class="menu-button">Menu</button>
+    <div id="vidas">Vidas: ❤️ ❤️ ❤️</div>
+    <div id="tempo">Tempo: 60s</div>
+    <div id="status">1 de 11</div>
+    <div id="acertos">Acertos: 00</div>
+  </div>
+
+  <h1>Qual é o dia da semana em Libras?</h1>
+  <p id="feedback"></p> <!-- Feedback de acerto ou erro -->
 
   <div class="container" id="quiz-container">
-    <!-- Imagem do sinal -->
-    <img id="sinal-img" src="" alt="Sinal de dia da semana em Libras">
-
-    <!-- Opções (inseridas via JavaScript) -->
+    <img id="sinal-img" src="" alt="Sinal em Libras">
     <div class="opcoes-container" id="opcoes"></div>
   </div>
 
-  <!-- Feedback e pontuação -->
-  <p id="feedback"></p>
-  <p id="pontuacao"></p>
+  <!-- Botão sempre visível, mas desativado inicialmente -->
+  <button id="btn-proximo" class="menu-button" onclick="proximaPergunta()" disabled>Próximo</button>
 
-  <!-- Botão Próxima -->
-  <button onclick="proximaPergunta()" id="btn-proximo" class="menu-button" style="display: none;">Próxima</button>
-
-  <!-- Botão Voltar -->
-  <br><br>
-  <a href="jogo.html" class="menu-button">🔙 Voltar ao Menu</a>
-
+  <!-- JavaScript correto para o quiz -->
   <script src="/JavaScrit/semana.js"></script>
 </body>
 </html>
