@@ -11,6 +11,7 @@ body {
   min-height: 100vh;
 }
 
+
 /* Barra superior com Menu, Tempo, Vidas, Progresso, Acertos */
 .top-bar {
   width: 100%;
@@ -22,6 +23,8 @@ body {
   justify-content: space-around;
   border-bottom: 1px solid #ccc;
   font-size: 20px;
+  
+
 }
 
 .top-bar .left-section,
@@ -45,6 +48,8 @@ body {
   padding: 8px 16px;
   font-size: 16px;
   cursor: pointer;
+  display: flex;
+  left: 100vw;
 }
 
 .top-bar .vidas {
