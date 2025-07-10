@@ -9,6 +9,63 @@ body {
   align-items: center;
   justify-content: flex-start;
   min-height: 100vh;
+  
+}
+
+.botoes-fase {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 28px;
+  justify-items: center;
+  padding: 50px;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.fase-button.fase {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: #1686dc;
+  color: white;
+  text-decoration: none;
+  border-radius: 12px;
+  padding: 16px;
+  width: 100%;
+  max-width: 160px;
+  height: 180px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.fase-button.fase:hover {
+  background-color: #094f7e;
+  transform: translateY(-4px);
+}
+
+.fase-button.fase img {
+  width:200px;
+  height: 200px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.fase-button.fase span {
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 1.3;
+}
+
+.menu-container {
+  max-width: 100%;
+  padding: 0 16px;
+ 
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 
@@ -49,7 +106,7 @@ body {
   font-size: 16px;
   cursor: pointer;
   display: flex;
-  left: 100vw;
+ 
 }
 
 .top-bar .vidas {
@@ -62,16 +119,35 @@ body {
 }
 
 /* Container principal com imagem + opções lado a lado */
+
 .container {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-  padding: 40px 20px;
+
   
 }
+
+/* botao que fica no inicio do jogo  */
+
+.botoes-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centraliza os botões no centro do container */
+  gap: 10px;
+  padding: 20px;
+  width: 100%;
+}
+
+/* Estilo unificado para os botões dentro da .botoes-menu */
+.botoes-menu .menu-button {
+  width: 100%;
+  max-width: 300px; /* define um tamanho padrão para todos */
+  text-align: left; /* alinha o texto ao início do botão */
+  padding-left: 24px; /* espaço entre o canto e o texto */
+  box-sizing: border-box; /* inclui o padding no tamanho total */
+}
+
 
 /* Imagem do sinal em Libras */
 #sinal-img {
@@ -120,6 +196,7 @@ body {
   font-size: 16px;
   text-decoration: none;
   display: block;
+  
 
   
 }
@@ -162,6 +239,12 @@ body {
     padding: 40px;
   }
 
+  .menu-container {
+    margin: 0 auto;        /* Centraliza o conteúdo na horizontal */
+    width: 100%;
+    padding: 0 16px;       /* Evita encostar nas bordas */
+  }
+
   .opcoes-container {
     grid-template-columns: repeat(2, 120px);
   }
@@ -177,24 +260,71 @@ body {
     padding: 12px;
   }
 
+  /* top bar do botaõ de voutar */
   .top-bar {
     flex-direction: line;
     gap: 10px;
     text-align: justify;
+    width: 100vw;
   }
 
   .top-bar .left-section,
   .top-bar .right-section {
     justify-content: justify;
   }
+
+  /* ajuste botão de fases */
+
+ .botoes-fase {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .fase-button.fase {
+    width: 90%;
+    max-width: 300px;
+    height: auto;
+    padding: 20px;
+  }
+
+  .fase-button.fase img {
+    width: 100px;
+    height: 100px;
+    gap: 20px; 
+  }
+
+  .fase-button.fase span {
+    font-size: 16px;
+  }
+
+  .fase-button.fase {
+    width: 90%;
+    max-width: 300px;
+    height: auto;
+    padding: 20px;
+  }
+
+  .fase-button.fase img {
+    width: 400px;
+    height: 100px;
+  }
+
+  .fase-button.fase span {
+    font-size: 16px;
+  }
+
 }
 
 /* Responsivo para celulares */
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 440px) {
   .container {
     flex-direction: column;
     gap: 30px;
     padding: 20px;
+   
   }
 
   #sinal-img {
@@ -234,10 +364,97 @@ body {
 }
 
 #qrcode-img {
-  width: 250px;
+  width: 100vw;
   max-width: 90%;
   height: auto;
   border: 2px solid #ccc;
   border-radius: 12px;
   margin-bottom: 20px;
 }
+
+/* ajuste botão de fases top bar fase do jogo */
+  .top-bar {
+    flex-direction: line;
+    gap: 10px;
+    text-align: justify;
+    box-sizing: border-box;      /* Inclui padding dentro do width */
+    overflow-x: hidden;  
+    
+  }
+
+/* ajuste botão de fases */
+
+.menu-container {
+  margin: 0 auto;               /* Centraliza o conteúdo na horizontal */
+  width: 100%;
+  max-width: 1200px;            /* Limita a largura máxima para telas grandes */
+  padding: 0 16px;              /* Evita encostar nas bordas */
+  box-sizing: border-box;      /* Inclui padding dentro do width */
+  overflow-x: hidden;          /* Impede rolagem lateral */
+  text-align: center;          /* Centraliza o texto */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+ 
+}
+ .fase-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    padding: 20px;
+   
+  }
+
+  .fase-button.fase {
+    width: 90%;
+    max-width: 300px;
+    height: auto;
+    padding: 20px;
+  }
+
+  .fase-button.fase img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .fase-button.fase span {
+    font-size: 16px;
+  }
+
+
+  .fase-button.fase {
+    width: 90%;
+    max-width: 300px;
+    height: auto;
+    padding: 20px;
+  }
+
+  .fase-button.fase img {
+    width: 400px;
+    height: 100px;
+  }
+
+  .fase-button.fase span {
+    font-size: 16px;
+  }
+
+  /* botao de escolha de fase */
+  .botoes-fase {
+    box-sizing: border-box;
+  }
+  
+  /* top bar do botaõ de voutar */
+  .top-bar {
+    flex-direction: line;
+    gap: 10px;
+    text-align: justify;
+    width: 100vw;
+
+  }
+
+  .top-bar .left-section,
+  .top-bar .right-section {
+    justify-content: justify;
+  }
+  
