@@ -138,3 +138,24 @@ function atualizarPontuacao() {
 
 /* ---------- Iniciar jogo ---------- */
 carregarPergunta();
+
+ const toggleButton = document.getElementById("toggle-theme");
+  const body = document.body;
+
+  // Verifica se já existe um tema salvo no localStorage
+  if (localStorage.getItem("theme") === "dark") {
+    body.classList.add("dark-mode");
+    toggleButton.textContent = "☀️";
+  }
+
+  toggleButton.addEventListener("click", () => {
+    body.classList.toggle("dark-mode");
+
+    if (body.classList.contains("dark-mode")) {
+      toggleButton.textContent = "☀️";
+      localStorage.setItem("theme", "dark");
+    } else {
+      toggleButton.textContent = "🌙";
+      localStorage.setItem("theme", "light");
+    }
+  });

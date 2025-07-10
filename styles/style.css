@@ -12,6 +12,38 @@ body {
   
 }
 
+/* Tema padrão (claro) */
+body {
+  background-color: #f9f9f9;
+  color: #000;
+}
+
+.top-bar {
+  background-color: #089483bc;
+}
+
+/* Tema escuro */
+body.dark-mode {
+  background-color: #121212;
+  color: #f0f0f0;
+}
+
+body.dark-mode .top-bar {
+  background-color: #1e1e1e;
+}
+
+body.dark-mode .menu-button,
+body.dark-mode .fase-button.fase {
+  background-color: #2d2d2d;
+  color: #fff;
+}
+
+body.dark-mode .menu-button:hover,
+body.dark-mode .fase-button.fase:hover {
+  background-color: #444;
+}     
+
+
 .botoes-fase {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
@@ -151,11 +183,20 @@ body {
 
 /* Imagem do sinal em Libras */
 #sinal-img {
-  width: 300px;
-  max-width: 100%;
+  width: 100px;
   height: auto;
   border: 2px solid #ccc;
   border-radius: 10px;
+}
+.qrcode-container{
+  display: flex;
+  width: 30vw;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  min-height: 8vh;
+  text-align: center;
 }
 
 /* Botões de opções em grade 2 colunas */
