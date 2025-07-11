@@ -183,10 +183,11 @@ body.dark-mode .fase-button.fase:hover {
 
 /* Imagem do sinal em Libras */
 #sinal-img {
-  width: 100px;
+  width: 250px;
   height: auto;
   border: 2px solid #ccc;
   border-radius: 10px;
+  margin: 20px;
 }
 .qrcode-container{
   display: flex;
