@@ -10,7 +10,7 @@ const perguntasBase = [
   { Imagem: "/imagens/cores/laranja.gif", correta: "Laranja", opcoes: ["Laranja", "Vermelho", "Marrom", "Azul"] },
   { Imagem: "/imagens/cores/roxo.gif", correta: "Roxo", opcoes: ["Roxo", "Rosa", "Cinza", "Verde"] },
   { Imagem: "/imagens/cores/cinza.gif", correta: "Cinza", opcoes: ["Cinza", "Branco", "Preto", "Roxo"] },
-  { Imagem: "/imagens/cores/cinza.gif", correta: "Marrom", opcoes: ["Cinza", "Branco", "Preto", "Roxo"] }
+  { Imagem: "/imagens/cores/marrom.gif", correta: "Marrom", opcoes: ["Marrom", "Branco", "Preto", "Roxo"] }
 ];
 
 /***** 2. Função para embaralhar *****/

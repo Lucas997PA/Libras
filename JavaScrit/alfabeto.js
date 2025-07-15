@@ -3,7 +3,7 @@ const perguntasBase = [
   { Imagem: "/imagens/alfabeto/a.gif", correta: "A", opcoes: ["A", "E", "O", "U"] },
   { Imagem: "/imagens/alfabeto/b.gif", correta: "B", opcoes: ["B", "C", "D", "F"] },
   { Imagem: "/imagens/alfabeto/c.gif", correta: "C", opcoes: ["C", "G", "F", "H"] },
-  { Imagem: "/imagens/alfabeto/ç2.gif", correta: "Ç", opcoes: ["Ç", "G", "F", "H"] },
+  { Imagem: "/imagens/alfabeto/ç.gif", correta: "Ç", opcoes: ["Ç", "G", "F", "H"] },
   { Imagem: "/imagens/alfabeto/d.gif", correta: "D", opcoes: ["D", "L", "M", "N"] },
   { Imagem: "/imagens/alfabeto/e.gif", correta: "E", opcoes: ["E", "I", "O", "U"] },
   { Imagem: "/imagens/alfabeto/f.gif", correta: "F", opcoes: ["F", "E", "G", "H"] },
