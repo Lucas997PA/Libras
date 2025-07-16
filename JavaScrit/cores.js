@@ -152,3 +152,4 @@ document.addEventListener("DOMContentLoaded", () => {
     fase.appendChild(video);
   });
 });
+

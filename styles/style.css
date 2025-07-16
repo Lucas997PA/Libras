@@ -12,6 +12,16 @@ body {
   
 }
 
+.loading {
+      text-align: center;
+      font-size: 20px;
+      padding: 40px;
+      color: #333;
+}
+
+
+/* 
+
 /* Tema padrão (claro) */
 body {
   background-color: #f9f9f9;
