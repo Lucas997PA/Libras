@@ -1,32 +1,32 @@
 /***** 1. Banco de perguntas (Alfabeto em Libras) *****/
 const perguntasBase = [
-  { Imagem: "/imagens/alfabeto/a.gif", correta: "A", opcoes: ["A", "E", "O", "U"] },
-  { Imagem: "/imagens/alfabeto/b.gif", correta: "B", opcoes: ["B", "C", "D", "F"] },
-  { Imagem: "/imagens/alfabeto/c.gif", correta: "C", opcoes: ["C", "G", "F", "H"] },
-  { Imagem: "/imagens/alfabeto/ç.gif", correta: "Ç", opcoes: ["Ç", "G", "F", "H"] },
-  { Imagem: "/imagens/alfabeto/d.gif", correta: "D", opcoes: ["D", "L", "M", "N"] },
-  { Imagem: "/imagens/alfabeto/e.gif", correta: "E", opcoes: ["E", "I", "O", "U"] },
-  { Imagem: "/imagens/alfabeto/f.gif", correta: "F", opcoes: ["F", "E", "G", "H"] },
-  { Imagem: "/imagens/alfabeto/g.gif", correta: "G", opcoes: ["G", "J", "C", "Q"] },
-  { Imagem: "/imagens/alfabeto/h.gif", correta: "H", opcoes: ["H", "K", "L", "M"] },
-  { Imagem: "/imagens/alfabeto/i.gif", correta: "I", opcoes: ["I", "E", "J", "Y"] },
-  { Imagem: "/imagens/alfabeto/j.gif", correta: "J", opcoes: ["J", "I", "G", "K"] },
-  { Imagem: "/imagens/alfabeto/k.gif", correta: "K", opcoes: ["K", "L", "X", "Y"] },
-  { Imagem: "/imagens/alfabeto/l.gif", correta: "L", opcoes: ["L", "I", "M", "N"] },
-  { Imagem: "/imagens/alfabeto/m.gif", correta: "M", opcoes: ["M", "N", "H", "W"] },
-  { Imagem: "/imagens/alfabeto/n.gif", correta: "N", opcoes: ["N", "M", "U", "Z"] },
-  { Imagem: "/imagens/alfabeto/o.gif", correta: "O", opcoes: ["O", "Q", "C", "D"] },
-  { Imagem: "/imagens/alfabeto/p.gif", correta: "P", opcoes: ["P", "R", "B", "T"] },
-  { Imagem: "/imagens/alfabeto/q.gif", correta: "Q", opcoes: ["Q", "G", "O", "C"] },
-  { Imagem: "/imagens/alfabeto/r.gif", correta: "R", opcoes: ["R", "P", "S", "B"] },
-  { Imagem: "/imagens/alfabeto/s.gif", correta: "S", opcoes: ["S", "C", "Z", "R"] },
-  { Imagem: "/imagens/alfabeto/t.gif", correta: "T", opcoes: ["T", "F", "P", "D"] },
-  { Imagem: "/imagens/alfabeto/u.gif", correta: "U", opcoes: ["U", "O", "V", "I"] },
-  { Imagem: "/imagens/alfabeto/v.gif", correta: "V", opcoes: ["V", "W", "B", "F"] },
-  { Imagem: "/imagens/alfabeto/w.gif", correta: "W", opcoes: ["W", "M", "V", "N"] },
-  { Imagem: "/imagens/alfabeto/x.gif", correta: "X", opcoes: ["X", "K", "Y", "Z"] },
-  { Imagem: "/imagens/alfabeto/y.gif", correta: "Y", opcoes: ["Y", "I", "J", "X"] },
-  { Imagem: "/imagens/alfabeto/z.gif", correta: "Z", opcoes: ["Z", "S", "X", "C"] }
+  { Imagem: "/imagens/alfabeto/a.mp4", correta: "A", opcoes: ["A", "E", "O", "U"] },
+  { Imagem: "/imagens/alfabeto/b.mp4", correta: "B", opcoes: ["B", "C", "D", "F"] },
+  { Imagem: "/imagens/alfabeto/c.mp4", correta: "C", opcoes: ["C", "G", "F", "H"] },
+  { Imagem: "/imagens/alfabeto/ç.mp4", correta: "Ç", opcoes: ["Ç", "G", "F", "H"] },
+  { Imagem: "/imagens/alfabeto/d.mp4", correta: "D", opcoes: ["D", "L", "M", "N"] },
+  { Imagem: "/imagens/alfabeto/e.mp4", correta: "E", opcoes: ["E", "I", "O", "U"] },
+  { Imagem: "/imagens/alfabeto/f.mp4", correta: "F", opcoes: ["F", "E", "G", "H"] },
+  { Imagem: "/imagens/alfabeto/g.mp4", correta: "G", opcoes: ["G", "J", "C", "Q"] },
+  { Imagem: "/imagens/alfabeto/h.mp4", correta: "H", opcoes: ["H", "K", "L", "M"] },
+  { Imagem: "/imagens/alfabeto/i.mp4", correta: "I", opcoes: ["I", "E", "J", "Y"] },
+  { Imagem: "/imagens/alfabeto/j.mp4", correta: "J", opcoes: ["J", "I", "G", "K"] },
+  { Imagem: "/imagens/alfabeto/k.mp4", correta: "K", opcoes: ["K", "L", "X", "Y"] },
+  { Imagem: "/imagens/alfabeto/l.mp4", correta: "L", opcoes: ["L", "I", "M", "N"] },
+  { Imagem: "/imagens/alfabeto/m.mp4", correta: "M", opcoes: ["M", "N", "H", "W"] },
+  { Imagem: "/imagens/alfabeto/n.mp4", correta: "N", opcoes: ["N", "M", "U", "Z"] },
+  { Imagem: "/imagens/alfabeto/o.mp4", correta: "O", opcoes: ["O", "Q", "C", "D"] },
+  { Imagem: "/imagens/alfabeto/p.mp4", correta: "P", opcoes: ["P", "R", "B", "T"] },
+  { Imagem: "/imagens/alfabeto/q.mp4", correta: "Q", opcoes: ["Q", "G", "O", "C"] },
+  { Imagem: "/imagens/alfabeto/r.mp4", correta: "R", opcoes: ["R", "P", "S", "B"] },
+  { Imagem: "/imagens/alfabeto/s.mp4", correta: "S", opcoes: ["S", "C", "Z", "R"] },
+  { Imagem: "/imagens/alfabeto/t.mp4", correta: "T", opcoes: ["T", "F", "P", "D"] },
+  { Imagem: "/imagens/alfabeto/u.mp4", correta: "U", opcoes: ["U", "O", "V", "I"] },
+  { Imagem: "/imagens/alfabeto/v.mp4", correta: "V", opcoes: ["V", "W", "B", "F"] },
+  { Imagem: "/imagens/alfabeto/w.mp4", correta: "W", opcoes: ["W", "M", "V", "N"] },
+  { Imagem: "/imagens/alfabeto/x.mp4", correta: "X", opcoes: ["X", "K", "Y", "Z"] },
+  { Imagem: "/imagens/alfabeto/y.mp4", correta: "Y", opcoes: ["Y", "I", "J", "X"] },
+  { Imagem: "/imagens/alfabeto/z.mp4", correta: "Z", opcoes: ["Z", "S", "X", "C"] }
 ];
 
 /***** 2. Função para embaralhar *****/
@@ -155,6 +155,25 @@ function atualizarPontuacao() {
 /* ---------- Iniciar jogo ---------- */
 carregarPergunta();
 
+
+document.addEventListener("DOMContentLoaded", () => {
+  const fases = document.querySelectorAll(".fase-button");
+
+  fases.forEach(fase => {
+    const src = fase.dataset.src;
+    const video = document.createElement("video");
+    video.src = src;
+    video.autoplay = true;
+    video.loop = true;
+    video.muted = true;
+    video.playsInline = true;
+    video.preload = "none";
+    video.width = 150;
+    fase.appendChild(video);
+  });
+});
+
+ // tema escuro e claro
   const toggleButton = document.getElementById("toggle-theme");
   const body = document.body;
 
