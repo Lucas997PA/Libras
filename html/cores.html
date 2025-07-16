@@ -19,8 +19,17 @@
   <p id="feedback"></p> <!-- Feedback de acerto ou erro -->
 
   <div class="container" id="quiz-container">
-    <!-- VÍDEO substituindo imagem -->
-    <video id="sinal-video" autoplay muted loop playsinline width="300" height="300"></video>
+    <!-- ✅ VÍDEO com preload="none" -->
+    <video
+      id="sinal-video"
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="none"
+      width="300"
+      height="300">
+    </video>
 
     <div class="opcoes-container" id="opcoes"></div>
   </div>
