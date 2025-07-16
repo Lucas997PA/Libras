@@ -1,11 +1,10 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Quiz - Números em Libras</title>
   <link rel="stylesheet" href="/styles/style.css">
-  
 </head>
 <body>
   <div class="top-bar">
@@ -20,14 +19,14 @@
   <p id="feedback"></p> <!-- Feedback de acerto ou erro -->
 
   <div class="container" id="quiz-container">
-    <img id="sinal-img" src="" alt="Sinal em Libras">
+    <!-- VÍDEO substituindo imagem -->
+    <video id="sinal-video" autoplay muted loop playsinline width="300" height="300"></video>
+
     <div class="opcoes-container" id="opcoes"></div>
   </div>
 
-  <!-- Botão sempre visível, mas desativado inicialmente -->
   <button id="btn-proximo" class="menu-button" onclick="proximaPergunta()" disabled>Próximo</button>
 
-  <!-- JavaScript correto para o quiz -->
   <script src="/JavaScrit/cores.js"></script>
 </body>
 </html>
