@@ -29,20 +29,17 @@ const perguntasBase = [
   { Imagem: "/imagens/alfabeto/z.mp4", correta: "Z", opcoes: ["Z", "S", "X", "C"] }
 ];
 
-/***** 2. Função para embaralhar *****/
 function embaralharArray(arr) {
   return arr.sort(() => Math.random() - 0.5);
 }
 
-/***** 3. Variáveis de controle *****/
-let perguntas   = embaralharArray([...perguntasBase]);
+let perguntas = embaralharArray([...perguntasBase]);
 let indiceAtual = 0;
-let pontuacao   = 0;
-let vidas       = 3;
-let tempo       = 60;
+let pontuacao = 0;
+let vidas = 3;
+let tempo = 60;
 let timer;
 
-/* ============ REGRAS DO JOGO ============ */
 function iniciarTimer() {
   tempo = 60;
   document.getElementById("tempo").textContent = `Tempo: ${tempo}s`;
@@ -66,12 +63,17 @@ function atualizarVidas() {
     `Vidas: ${"❤️ ".repeat(vidas).trim()}`;
 }
 
-/* ---------- Carrega a pergunta atual ---------- */
 function carregarPergunta() {
   const pergunta = perguntas[indiceAtual];
 
-  document.getElementById("sinal-img").src   = pergunta.Imagem;
-  document.getElementById("status").textContent  = 
+  // Atualiza o vídeo
+  const videoElement = document.getElementById("sinal-video");
+  if (videoElement) {
+    videoElement.src = pergunta.Imagem;
+    videoElement.load();
+  }
+
+  document.getElementById("status").textContent = 
     `${indiceAtual + 1} de ${perguntas.length}`;
   document.getElementById("acertos").textContent = 
     `Acertos: ${pontuacao.toString().padStart(2, "0")}`;
@@ -83,26 +85,26 @@ function carregarPergunta() {
 
   const opcoesContainer = document.getElementById("opcoes");
   opcoesContainer.innerHTML = "";
-  pergunta.opcoes.forEach(op => {
-    const b = document.createElement("button");
-    b.textContent = op;
-    b.classList.add("menu-button");
-    b.onclick = () => verificarResposta(op);
-    opcoesContainer.appendChild(b);
+  pergunta.opcoes.forEach(opcao => {
+    const botao = document.createElement("button");
+    botao.textContent = opcao;
+    botao.classList.add("menu-button");
+    botao.onclick = () => verificarResposta(opcao);
+    opcoesContainer.appendChild(botao);
   });
 
   iniciarTimer();
 }
 
-/* ---------- Verifica resposta ---------- */
 function verificarResposta(resposta) {
   clearInterval(timer);
 
   const pergunta = perguntas[indiceAtual];
   const feedback = document.getElementById("feedback");
 
-  document.querySelectorAll("#opcoes button")
-          .forEach(btn => btn.disabled = true);
+  document
+    .querySelectorAll("#opcoes button")
+    .forEach(btn => (btn.disabled = true));
 
   if (resposta === pergunta.correta) {
     feedback.textContent = "✅ Resposta correta!";
@@ -121,21 +123,18 @@ function verificarResposta(resposta) {
   else liberarBotaoProximo();
 }
 
-/* ---------- Libera botão Próximo ---------- */
 function liberarBotaoProximo() {
   const btn = document.getElementById("btn-proximo");
   btn.disabled = false;
   btn.classList.add("btn-ativo");
 }
 
-/* ---------- Avança ou finaliza ---------- */
 function proximaPergunta() {
   indiceAtual++;
   if (indiceAtual < perguntas.length && vidas > 0) carregarPergunta();
   else fimDoJogo("🎉 Fim do jogo!");
 }
 
-/* ---------- Tela de fim ---------- */
 function fimDoJogo(msg) {
   clearInterval(timer);
   document.getElementById("quiz-container").innerHTML = `
@@ -148,13 +147,11 @@ function fimDoJogo(msg) {
 }
 
 function atualizarPontuacao() {
-  const p = document.getElementById("pontuacao");
-  if (p) p.textContent = `Pontuação: ${pontuacao} / ${perguntas.length}`;
+  const pEl = document.getElementById("pontuacao");
+  if (pEl) pEl.textContent = `Pontuação: ${pontuacao} / ${perguntas.length}`;
 }
 
-/* ---------- Iniciar jogo ---------- */
 carregarPergunta();
-
 
 // Tema escuro e claro
 const toggleButton = document.getElementById("toggle-theme");
@@ -196,5 +193,6 @@ document.addEventListener("DOMContentLoaded", () => {
     fase.appendChild(video);
   });
 });
+
 
 
