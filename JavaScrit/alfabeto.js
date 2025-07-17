@@ -156,25 +156,8 @@ function atualizarPontuacao() {
 carregarPergunta();
 
 
-document.addEventListener("DOMContentLoaded", () => {
-  const fases = document.querySelectorAll(".fase-button");
-
-  fases.forEach(fase => {
-    const src = fase.dataset.src;
-    const video = document.createElement("video");
-    video.src = src;
-    video.autoplay = true;
-    video.loop = true;
-    video.muted = true;
-    video.playsInline = true;
-    video.preload = "none";
-    video.width = 150;
-    fase.appendChild(video);
-  });
-});
-
- // tema escuro e claro
-  const toggleButton = document.getElementById("toggle-theme");
+// Tema escuro e claro
+const toggleButton = document.getElementById("toggle-theme");
   const body = document.body;
 
   // Verifica se já existe um tema salvo no localStorage
@@ -194,4 +177,24 @@ document.addEventListener("DOMContentLoaded", () => {
       localStorage.setItem("theme", "light");
     }
   });
+
+
+// Carrega vídeos das fases
+document.addEventListener("DOMContentLoaded", () => {
+  const fases = document.querySelectorAll(".fase-button");
+
+  fases.forEach(fase => {
+    const src = fase.dataset.src;
+    const video = document.createElement("video");
+    video.src = src;
+    video.autoplay = true;
+    video.loop = true;
+    video.muted = true;
+    video.playsInline = true;
+    video.preload = "none";
+    video.width = 150;
+    fase.appendChild(video);
+  });
+});
+
 
