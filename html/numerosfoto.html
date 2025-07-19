@@ -2,27 +2,23 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <title>Menu Inicial - Jogo de Libras</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles/style.css">
+  <title>QR Code - Compartilhe o Jogo</title>
+  <link rel="stylesheet" href="/styles/style.css">
+
 </head>
 <body>
-<!-- 
-    <div class="top-bar">
-      <button id="toggle-theme" aria-label="Alternar tema claro/escuro">🌙</button>
-    </div> -->
 
-  <div class="menu-container">
-    <h1>Bem-vindo ao Jogo de Libras</h1>
-    <p>Aprenda Libras de forma divertida!</p>
-
-    <div class="botoes-menu">
-      <a href="html/jogo.html" class="menu-button">🎮 Jogar</a>
-      <a href="html/Historia_Libras.html" class="menu-button">📘 História sobre a Libras</a>
-      <a href="html/EstudarLibras.html" class="menu-button">Estudar Libras</a>
-      <a id="toggle-theme" class="menu-button"  aria-label="Alternar tema claro/escuro"> Modo Escuro </a>
-      <a href="html/QRCode.html" class="menu-button">🔳 Compartilhar</a>
+  <div class="top-bar">
+      <a href="/index.html" class="menu-button voltar">🔙 Voltar ao Menu Principal</a>
     </div>
+
+  <div class="historia">
+    <h1 class="menu-container">Numeros em Libras</h1>
+    
+    <!-- Imagem do QR Code -->
+    <img id="qrcode-img" src="/imagens/Estudos/Numeros.png" alt="QR Code do Jogo" width="400"  >
+
   </div>
 
   <script>
@@ -47,6 +43,7 @@
     }
   });
 </script>
+
 
 </body>
 </html>

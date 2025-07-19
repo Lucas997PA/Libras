@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>O que é Libras?</title>
+  <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+
+  
+    <div class="top-bar">
+      <a href="/index.html" class="menu-button voltar">🔙 Voltar ao Menu Principal</a>
+
+    </div>
+
+  <div class="historia">
+    <h1 class= "h1">O que é Libras?</h1>
+    <p>
+      Libras (Língua Brasileira de Sinais) é a forma de comunicação usada pelas comunidades surdas no Brasil.
+      É uma língua com estrutura própria, baseada em gestos, expressões faciais e corporais.
+    </p>
+    <p>
+      Aprender Libras é uma forma de promover a inclusão e a acessibilidade, facilitando a comunicação entre surdos e ouvintes.
+    </p>
+
+    <h2>📜 História da Libras</h2>
+    <p>
+      A LIBRAS surgiu da interação entre diferentes línguas de sinais utilizadas por pessoas 
+      surdas no Brasil, com forte influência da Língua de Sinais Francesa (LSF), trazida por 
+      Ernest Huet, um educador francês surdo, no século XIX.
+    </p>
+    <ul>
+      <li><strong>1857</strong> – undação do Imperial Instituto de Surdos-Mudos no Rio de Janeiro,
+         por Dom Pedro II. Huet ajudou a implantar o ensino para surdos utilizando sinais.</li>
+
+      <li><strong>Século XX</strong>Durante parte do século XX, especialmente após o Congresso de 
+        Milão (1880), o uso da língua de sinais foi reprimido em vários países, inclusive no Brasil,
+         sendo substituído por métodos oralistas (foco apenas na fala e leitura labial).</li>
+
+      <li><strong>Anos 1980–1990</strong> – Retomada da valorização da Libras como língua legítima.</li>
+      
+       <li><strong> Anos 2002 - Atualidade</strong> Reconhece a Libras como meio legal de comunicação e expressão com isso 
+         ao longo do tempo, a comunidade surda brasileira foi desenvolvendo seus próprios sinais,
+          formando uma língua natural, com gramática e estrutura própria, diferente do português.</li>
+    </ul>
+
+    <h2>⚖️ Leis que Reconhecem e Garantem o Uso da Libras</h2>
+
+    <h3>✅ Lei nº 10.436/2002</h3>
+    <p>
+      Reconhece a Libras como meio legal de comunicação e expressão. Garante seu uso e apoio à difusão em serviços públicos e instituições de ensino.
+    </p>
+    <ul>
+      <li>Reconhece a Língua Brasileira de Sinais como meio legal de comunicação e expressão.</li>
+      <li>Afirma que LIBRAS não substitui o português, mas deve ser usada como forma de comunicação da comunidade surda.</li>
+      <li>Garante apoio à sua difusão, ensino e uso em serviços públicos.</li>
+    </ul>
+
+    <h3>✅ Decreto nº 5.626/2005</h3>
+    <p>
+      Regulamenta a Lei 10.436 e torna obrigatório o ensino de Libras em cursos de licenciatura e fonoaudiologia. Garante intérpretes em escolas e repartições públicas.
+    </p>
+    <ul>
+      <li>Torna obrigatório o ensino de LIBRAS em cursos de formação de professores (pedagogia, licenciaturas) e fonoaudiologia.</li>
+      <li>Estabelece que instituições públicas devem garantir intérpretes de LIBRAS.</li>
+      <li>Formação de intérpretes e instrutores surdos.</li>
+      <li>Acessibilidade em televisão, educação e saúde.</li>
+      <li>Ensino da LIBRAS em escolas bilíngues ou inclusivas.</li>
+    </ul>
+
+    <h3>✅ Lei Brasileira de Inclusão (Lei nº 13.146/2015)</h3>
+    <p>
+      Garante o direito à comunicação acessível, incluindo Libras, nos setores educacional, jurídico, médico e de mídia. Fortalece a valorização da cultura surda.
+    </p>
+
+    <h2>🎯 Direitos Garantidos</h2>
+    <ul>
+      <li>Educação bilíngue (Libras e português) desde a infância.</li>
+      <li>Intérpretes de Libras em serviços públicos.</li>
+      <li>Ensino da Libras nas universidades.</li>
+      <li>Conteúdos acessíveis na TV e internet.</li>
+      <li>Valorização da identidade e cultura surda.</li>
+    </ul>
+  </div>
+
+  <script>
+    const toggleButton = document.getElementById("toggle-theme");
+    const body = document.body;
+
+    // Verifica se já existe um tema salvo no localStorage
+    if (localStorage.getItem("theme") === "dark") {
+      body.classList.add("dark-mode");
+      toggleButton.textContent = "☀️";
+    }
+
+    toggleButton?.addEventListener("click", () => {
+      body.classList.toggle("dark-mode");
+
+      if (body.classList.contains("dark-mode")) {
+        toggleButton.textContent = "☀️";
+        localStorage.setItem("theme", "dark");
+      } else {
+        toggleButton.textContent = "🌙";
+        localStorage.setItem("theme", "light");
+      }
+    });
+  </script>
+</body>
+</html>
