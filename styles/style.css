@@ -24,7 +24,7 @@ body {
   padding: 0 16px;              /* Evita encostar nas bordas */
   box-sizing: border-box;      /* Inclui padding dentro do width */
   overflow-x: hidden;          /* Impede rolagem lateral */
-  text-align: center;          /* Centraliza o texto */
+ 
   display: flex;
   flex-direction: column;
   align-items: center;
