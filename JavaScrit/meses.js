@@ -1,32 +1,29 @@
 const perguntasBase = [
-  { Imagem: "/imagens/meses/janeiro.png", correta: "Janeiro", opcoes: ["Janeiro", "Fevereiro", "Março", "Abril"] },
-  { Imagem: "/imagens/meses/fevereiro.png", correta: "Fevereiro", opcoes: ["Fevereiro", "Janeiro", "Agosto", "Dezembro"] },
-  { Imagem: "/imagens/meses/marco.png", correta: "Março", opcoes: ["Março", "Abril", "Julho", "Junho"] },
-  { Imagem: "/imagens/meses/abril.png", correta: "Abril", opcoes: ["Abril", "Maio", "Fevereiro", "Janeiro"] },
-  { Imagem: "/imagens/meses/maio.png", correta: "Maio", opcoes: ["Maio", "Junho", "Março", "Outubro"] },
-  { Imagem: "/imagens/meses/junho.png", correta: "Junho", opcoes: ["Junho", "Julho", "Agosto", "Abril"] },
-  { Imagem: "/imagens/meses/julho.png", correta: "Julho", opcoes: ["Julho", "Junho", "Maio", "Setembro"] },
-  { Imagem: "/imagens/meses/agosto.png", correta: "Agosto", opcoes: ["Agosto", "Outubro", "Fevereiro", "Janeiro"] },
-  { Imagem: "/imagens/meses/setembro.png", correta: "Setembro", opcoes: ["Setembro", "Novembro", "Dezembro", "Março"] },
-  { Imagem: "/imagens/meses/outubro.png", correta: "Outubro", opcoes: ["Outubro", "Setembro", "Agosto", "Julho"] },
-  { Imagem: "/imagens/meses/novembro.png", correta: "Novembro", opcoes: ["Novembro", "Outubro", "Maio", "Janeiro"] },
-  { Imagem: "/imagens/meses/dezembro.png", correta: "Dezembro", opcoes: ["Dezembro", "Novembro", "Junho", "Abril"] }
+  { Imagem: "/imagens/meses/janeiro.mp4", correta: "Janeiro", opcoes: ["Janeiro", "Fevereiro", "Março", "Abril"] },
+  { Imagem: "/imagens/meses/fevereiro.mp4", correta: "Fevereiro", opcoes: ["Fevereiro", "Janeiro", "Agosto", "Dezembro"] },
+  { Imagem: "/imagens/meses/marco.mp4", correta: "Março", opcoes: ["Março", "Abril", "Julho", "Junho"] },
+  { Imagem: "/imagens/meses/abril.mp4", correta: "Abril", opcoes: ["Abril", "Maio", "Fevereiro", "Janeiro"] },
+  { Imagem: "/imagens/meses/maio.mp4", correta: "Maio", opcoes: ["Maio", "Junho", "Março", "Outubro"] },
+  { Imagem: "/imagens/meses/junho.mp4", correta: "Junho", opcoes: ["Junho", "Julho", "Agosto", "Abril"] },
+  { Imagem: "/imagens/meses/julho.mp4", correta: "Julho", opcoes: ["Julho", "Junho", "Maio", "Setembro"] },
+  { Imagem: "/imagens/meses/agosto.mp4", correta: "Agosto", opcoes: ["Agosto", "Outubro", "Fevereiro", "Janeiro"] },
+  { Imagem: "/imagens/meses/setembro.mp4", correta: "Setembro", opcoes: ["Setembro", "Novembro", "Dezembro", "Março"] },
+  { Imagem: "/imagens/meses/outubro.mp4", correta: "Outubro", opcoes: ["Outubro", "Setembro", "Agosto", "Julho"] },
+  { Imagem: "/imagens/meses/novembro.mp4", correta: "Novembro", opcoes: ["Novembro", "Outubro", "Maio", "Janeiro"] },
+  { Imagem: "/imagens/meses/dezembro.mp4", correta: "Dezembro", opcoes: ["Dezembro", "Novembro", "Junho", "Abril"] }
 ];
 
-/***** 2. Função para embaralhar *****/
 function embaralharArray(arr) {
   return arr.sort(() => Math.random() - 0.5);
 }
 
-/***** 3. Variáveis de controle *****/
-let perguntas   = embaralharArray([...perguntasBase]); // <- já embaralhadas
+let perguntas = embaralharArray([...perguntasBase]);
 let indiceAtual = 0;
-let pontuacao   = 0;
-let vidas       = 3;
-let tempo       = 60;
+let pontuacao = 0;
+let vidas = 3;
+let tempo = 60;
 let timer;
 
-/* ============ REGRAS DO JOGO ============ */
 function iniciarTimer() {
   tempo = 60;
   document.getElementById("tempo").textContent = `Tempo: ${tempo}s`;
@@ -50,45 +47,45 @@ function atualizarVidas() {
     `Vidas: ${"❤️ ".repeat(vidas).trim()}`;
 }
 
-/* ---------- Carrega a pergunta atual ---------- */
 function carregarPergunta() {
   const pergunta = perguntas[indiceAtual];
 
-  /* UI básica */
-  document.getElementById("sinal-img").src = pergunta.Imagem;
+  // Atualiza o vídeo
+  const videoElement = document.getElementById("sinal-video");
+  if (videoElement) {
+    videoElement.src = pergunta.Imagem;
+    videoElement.load();
+  }
+
   document.getElementById("status").textContent = 
     `${indiceAtual + 1} de ${perguntas.length}`;
   document.getElementById("acertos").textContent = 
     `Acertos: ${pontuacao.toString().padStart(2, "0")}`;
   document.getElementById("feedback").textContent = "";
 
-  /* Desativa botão Próximo */
   const btnProx = document.getElementById("btn-proximo");
   btnProx.disabled = true;
   btnProx.classList.remove("btn-ativo");
 
-  /* Monta opções */
   const opcoesContainer = document.getElementById("opcoes");
   opcoesContainer.innerHTML = "";
   pergunta.opcoes.forEach(opcao => {
     const botao = document.createElement("button");
-    botao.textContent  = opcao;
+    botao.textContent = opcao;
     botao.classList.add("menu-button");
-    botao.onclick      = () => verificarResposta(opcao);
+    botao.onclick = () => verificarResposta(opcao);
     opcoesContainer.appendChild(botao);
   });
 
   iniciarTimer();
 }
 
-/* ---------- Verifica resposta ---------- */
 function verificarResposta(resposta) {
   clearInterval(timer);
 
   const pergunta = perguntas[indiceAtual];
   const feedback = document.getElementById("feedback");
 
-  /* Bloqueia botões */
   document
     .querySelectorAll("#opcoes button")
     .forEach(btn => (btn.disabled = true));
@@ -110,21 +107,18 @@ function verificarResposta(resposta) {
   else liberarBotaoProximo();
 }
 
-/* ---------- Libera botão Próximo ---------- */
 function liberarBotaoProximo() {
   const btn = document.getElementById("btn-proximo");
   btn.disabled = false;
-  btn.classList.add("btn-ativo"); // muda p/ azul
+  btn.classList.add("btn-ativo");
 }
 
-/* ---------- Avança ou finaliza ---------- */
 function proximaPergunta() {
   indiceAtual++;
   if (indiceAtual < perguntas.length && vidas > 0) carregarPergunta();
   else fimDoJogo("🎉 Fim do jogo!");
 }
 
-/* ---------- Tela de fim ---------- */
 function fimDoJogo(msg) {
   clearInterval(timer);
   document.getElementById("quiz-container").innerHTML = `
@@ -141,10 +135,10 @@ function atualizarPontuacao() {
   if (pEl) pEl.textContent = `Pontuação: ${pontuacao} / ${perguntas.length}`;
 }
 
-/* ---------- Iniciar jogo ---------- */
 carregarPergunta();
 
- const toggleButton = document.getElementById("toggle-theme");
+// Tema escuro e claro
+const toggleButton = document.getElementById("toggle-theme");
   const body = document.body;
 
   // Verifica se já existe um tema salvo no localStorage
@@ -164,3 +158,25 @@ carregarPergunta();
       localStorage.setItem("theme", "light");
     }
   });
+
+
+// Carrega vídeos das fases
+document.addEventListener("DOMContentLoaded", () => {
+  const fases = document.querySelectorAll(".fase-button");
+
+  fases.forEach(fase => {
+    const src = fase.dataset.src;
+    const video = document.createElement("video");
+    video.src = src;
+    video.autoplay = true;
+    video.loop = true;
+    video.muted = true;
+    video.playsInline = true;
+    video.preload = "none";
+    video.width = 150;
+    fase.appendChild(video);
+  });
+});
+
+
+

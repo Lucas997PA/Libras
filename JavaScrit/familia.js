@@ -1,36 +1,33 @@
 const perguntasBase = [
-  { Imagem: "/imagens/familia/pai.png", correta: "Pai", opcoes: ["Pai", "Mãe", "Avô", "Tio"] },
-  { Imagem: "/imagens/familia/mae.png", correta: "Mãe", opcoes: ["Mãe", "Tia", "Avó", "Neta"] },
-  { Imagem: "/imagens/familia/irma.png", correta: "Irmã", opcoes: ["Irmã", "Prima", "Amiga", "Sogra"] },
-  { Imagem: "/imagens/familia/irmao.png", correta: "Irmão", opcoes: ["Irmão", "Primo", "Amigo", "Sogro"] },
-  { Imagem: "/imagens/familia/tio.png", correta: "Tio", opcoes: ["Tio", "Pai", "Avô", "Sogro"] },
-  { Imagem: "/imagens/familia/tia.png", correta: "Tia", opcoes: ["Tia", "Mãe", "Avó", "Sogra"] },
-  { Imagem: "/imagens/familia/avo.png", correta: "Avó", opcoes: ["Avó", "Mãe", "Tia", "Sogra"] },
-  { Imagem: "/imagens/familia/avo-homem.png", correta: "Avô", opcoes: ["Avô", "Pai", "Tio", "Sogro"] },
-  { Imagem: "/imagens/familia/primo.png", correta: "Primo", opcoes: ["Primo", "Irmão", "Amigo", "Neto"] },
-  { Imagem: "/imagens/familia/prima.png", correta: "Prima", opcoes: ["Prima", "Irmã", "Amiga", "Neta"] },
-  { Imagem: "/imagens/familia/sogra.png", correta: "Sogra", opcoes: ["Sogra", "Avó", "Mãe", "Tia"] },
-  { Imagem: "/imagens/familia/sogro.png", correta: "Sogro", opcoes: ["Sogro", "Avô", "Pai", "Tio"] },
-  { Imagem: "/imagens/familia/amigo.png", correta: "Amigo", opcoes: ["Amigo", "Primo", "Irmão", "Sogro"] },
-  { Imagem: "/imagens/familia/amiga.png", correta: "Amiga", opcoes: ["Amiga", "Prima", "Irmã", "Sogra"] },
-  { Imagem: "/imagens/familia/neto.png", correta: "Neto", opcoes: ["Neto", "Primo", "Irmão", "Amigo"] },
-  { Imagem: "/imagens/familia/neta.png", correta: "Neta", opcoes: ["Neta", "Prima", "Irmã", "Amiga"] }
+  { Imagem: "/imagens/familia/pai.mp4", correta: "Pai", opcoes: ["Pai", "Mãe", "Avô", "Tio"] },
+  { Imagem: "/imagens/familia/mae.mp4", correta: "Mãe", opcoes: ["Mãe", "Tia", "Avó", "Neta"] },
+  { Imagem: "/imagens/familia/irma.mp4", correta: "Irmã", opcoes: ["Irmã", "Prima", "Amiga", "Sogra"] },
+  { Imagem: "/imagens/familia/irmao.mp4", correta: "Irmão", opcoes: ["Irmão", "Primo", "Amigo", "Sogro"] },
+  { Imagem: "/imagens/familia/tio.mp4", correta: "Tio", opcoes: ["Tio", "Pai", "Avô", "Sogro"] },
+  { Imagem: "/imagens/familia/tia.mp4", correta: "Tia", opcoes: ["Tia", "Mãe", "Avó", "Sogra"] },
+  { Imagem: "/imagens/familia/avo.mp4", correta: "Avó", opcoes: ["Avó", "Mãe", "Tia", "Sogra"] },
+  { Imagem: "/imagens/familia/avo-homem.mp4", correta: "Avô", opcoes: ["Avô", "Pai", "Tio", "Sogro"] },
+  { Imagem: "/imagens/familia/primo.mp4", correta: "Primo", opcoes: ["Primo", "Irmão", "Amigo", "Neto"] },
+  { Imagem: "/imagens/familia/prima.mp4", correta: "Prima", opcoes: ["Prima", "Irmã", "Amiga", "Neta"] },
+  { Imagem: "/imagens/familia/sogra.mp4", correta: "Sogra", opcoes: ["Sogra", "Avó", "Mãe", "Tia"] },
+  { Imagem: "/imagens/familia/sogro.mp4", correta: "Sogro", opcoes: ["Sogro", "Avô", "Pai", "Tio"] },
+  { Imagem: "/imagens/familia/amigo.mp4", correta: "Amigo", opcoes: ["Amigo", "Primo", "Irmão", "Sogro"] },
+  { Imagem: "/imagens/familia/amiga.mp4", correta: "Amiga", opcoes: ["Amiga", "Prima", "Irmã", "Sogra"] },
+  { Imagem: "/imagens/familia/neto.mp4", correta: "Neto", opcoes: ["Neto", "Primo", "Irmão", "Amigo"] },
+  { Imagem: "/imagens/familia/neta.mp4", correta: "Neta", opcoes: ["Neta", "Prima", "Irmã", "Amiga"] }
 ];
 
-/***** 2. Função para embaralhar *****/
 function embaralharArray(arr) {
   return arr.sort(() => Math.random() - 0.5);
 }
 
-/***** 3. Variáveis de controle *****/
-let perguntas   = embaralharArray([...perguntasBase]); // <- já embaralhadas
+let perguntas = embaralharArray([...perguntasBase]);
 let indiceAtual = 0;
-let pontuacao   = 0;
-let vidas       = 3;
-let tempo       = 60;
+let pontuacao = 0;
+let vidas = 3;
+let tempo = 60;
 let timer;
 
-/* ============ REGRAS DO JOGO ============ */
 function iniciarTimer() {
   tempo = 60;
   document.getElementById("tempo").textContent = `Tempo: ${tempo}s`;
@@ -54,45 +51,45 @@ function atualizarVidas() {
     `Vidas: ${"❤️ ".repeat(vidas).trim()}`;
 }
 
-/* ---------- Carrega a pergunta atual ---------- */
 function carregarPergunta() {
   const pergunta = perguntas[indiceAtual];
 
-  /* UI básica */
-  document.getElementById("sinal-img").src = pergunta.Imagem;
+  // Atualiza o vídeo
+  const videoElement = document.getElementById("sinal-video");
+  if (videoElement) {
+    videoElement.src = pergunta.Imagem;
+    videoElement.load();
+  }
+
   document.getElementById("status").textContent = 
     `${indiceAtual + 1} de ${perguntas.length}`;
   document.getElementById("acertos").textContent = 
     `Acertos: ${pontuacao.toString().padStart(2, "0")}`;
   document.getElementById("feedback").textContent = "";
 
-  /* Desativa botão Próximo */
   const btnProx = document.getElementById("btn-proximo");
   btnProx.disabled = true;
   btnProx.classList.remove("btn-ativo");
 
-  /* Monta opções */
   const opcoesContainer = document.getElementById("opcoes");
   opcoesContainer.innerHTML = "";
   pergunta.opcoes.forEach(opcao => {
     const botao = document.createElement("button");
-    botao.textContent  = opcao;
+    botao.textContent = opcao;
     botao.classList.add("menu-button");
-    botao.onclick      = () => verificarResposta(opcao);
+    botao.onclick = () => verificarResposta(opcao);
     opcoesContainer.appendChild(botao);
   });
 
   iniciarTimer();
 }
 
-/* ---------- Verifica resposta ---------- */
 function verificarResposta(resposta) {
   clearInterval(timer);
 
   const pergunta = perguntas[indiceAtual];
   const feedback = document.getElementById("feedback");
 
-  /* Bloqueia botões */
   document
     .querySelectorAll("#opcoes button")
     .forEach(btn => (btn.disabled = true));
@@ -114,21 +111,18 @@ function verificarResposta(resposta) {
   else liberarBotaoProximo();
 }
 
-/* ---------- Libera botão Próximo ---------- */
 function liberarBotaoProximo() {
   const btn = document.getElementById("btn-proximo");
   btn.disabled = false;
-  btn.classList.add("btn-ativo"); // muda p/ azul
+  btn.classList.add("btn-ativo");
 }
 
-/* ---------- Avança ou finaliza ---------- */
 function proximaPergunta() {
   indiceAtual++;
   if (indiceAtual < perguntas.length && vidas > 0) carregarPergunta();
   else fimDoJogo("🎉 Fim do jogo!");
 }
 
-/* ---------- Tela de fim ---------- */
 function fimDoJogo(msg) {
   clearInterval(timer);
   document.getElementById("quiz-container").innerHTML = `
@@ -145,10 +139,10 @@ function atualizarPontuacao() {
   if (pEl) pEl.textContent = `Pontuação: ${pontuacao} / ${perguntas.length}`;
 }
 
-/* ---------- Iniciar jogo ---------- */
 carregarPergunta();
 
- const toggleButton = document.getElementById("toggle-theme");
+// Tema escuro e claro
+const toggleButton = document.getElementById("toggle-theme");
   const body = document.body;
 
   // Verifica se já existe um tema salvo no localStorage
@@ -168,3 +162,25 @@ carregarPergunta();
       localStorage.setItem("theme", "light");
     }
   });
+
+
+// Carrega vídeos das fases
+document.addEventListener("DOMContentLoaded", () => {
+  const fases = document.querySelectorAll(".fase-button");
+
+  fases.forEach(fase => {
+    const src = fase.dataset.src;
+    const video = document.createElement("video");
+    video.src = src;
+    video.autoplay = true;
+    video.loop = true;
+    video.muted = true;
+    video.playsInline = true;
+    video.preload = "none";
+    video.width = 150;
+    fase.appendChild(video);
+  });
+});
+
+
+
