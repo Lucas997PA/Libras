@@ -8,8 +8,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  min-height: 100vh;
-  
+ 
   
 }
 
@@ -21,6 +20,15 @@ body {
   padding: 40px;
   border-radius: 10px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+
+  padding: 0 16px;              /* Evita encostar nas bordas */
+  box-sizing: border-box;      /* Inclui padding dentro do width */
+  overflow-x: hidden;          /* Impede rolagem lateral */
+  text-align: center;          /* Centraliza o texto */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+ 
 }
 
 /* Títulos e textos */
@@ -353,6 +361,8 @@ body.dark-mode .fase-button.fase:hover {
     gap: 10px;
     text-align: justify;
     width: 100vw;
+  
+    
   }
 
   .top-bar .left-section,
@@ -492,6 +502,8 @@ body.dark-mode .fase-button.fase:hover {
     padding: 20px;
    
   }
+
+  
 
   .fase-button.fase {
     width: 90%;
