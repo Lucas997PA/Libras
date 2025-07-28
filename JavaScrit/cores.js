@@ -1,15 +1,15 @@
 const perguntasBase = [
-  { Imagem: "/imagens/cores/vermelho.mp4", correta: "Vermelho", opcoes: ["Vermelho", "Azul", "Amarelo", "Verde"] },
-  { Imagem: "/imagens/cores/azul.mp4", correta: "Azul", opcoes: ["Azul", "Rosa", "Vermelho", "Laranja"] },
-  { Imagem: "/imagens/cores/amarelo.mp4", correta: "Amarelo", opcoes: ["Amarelo", "Marrom", "Azul", "Cinza"] },
+  { Imagem: "/imagens/cores/vermelho.mp4", correta: "Vermelho", opcoes: ["Marrom", "Vermelho", "Amarelo", "Verde"] },
+  { Imagem: "/imagens/cores/azul.mp4", correta: "Azul", opcoes: ["Preto", "Rosa", "Azul", "Laranja"] },
+  { Imagem: "/imagens/cores/amarelo.mp4", correta: "Amarelo", opcoes: ["Cinza", "Marrom", "Azul", "Amarelo"] },
   { Imagem: "/imagens/cores/verde.mp4", correta: "Verde", opcoes: ["Verde", "Preto", "Branco", "Roxo"] },
-  { Imagem: "/imagens/cores/rosa.mp4", correta: "Rosa", opcoes: ["Rosa", "Azul", "Cinza", "Laranja"] },
-  { Imagem: "/imagens/cores/preto.mp4", correta: "Preto", opcoes: ["Preto", "Branco", "Cinza", "Marrom"] },
+  { Imagem: "/imagens/cores/rosa.mp4", correta: "Rosa", opcoes: ["Azul", "Rosa", "Cinza", "Laranja"] },
+  { Imagem: "/imagens/cores/preto.mp4", correta: "Preto", opcoes: ["Cinza", "Branco", "Preto", "Marrom"] },
   { Imagem: "/imagens/cores/branco.mp4", correta: "Branco", opcoes: ["Branco", "Preto", "Roxo", "Amarelo"] },
-  { Imagem: "/imagens/cores/laranja.mp4", correta: "Laranja", opcoes: ["Laranja", "Vermelho", "Marrom", "Azul"] },
+  { Imagem: "/imagens/cores/laranja.mp4", correta: "Laranja", opcoes: ["Roxo", "Laranja", "Marrom", "Azul"] },
   { Imagem: "/imagens/cores/roxo.mp4", correta: "Roxo", opcoes: ["Roxo", "Rosa", "Cinza", "Verde"] },
-  { Imagem: "/imagens/cores/cinza.mp4", correta: "Cinza", opcoes: ["Cinza", "Branco", "Preto", "Roxo"] },
-  { Imagem: "/imagens/cores/marrom.mp4", correta: "Marrom", opcoes: ["Marrom", "Branco", "Preto", "Roxo"] }
+  { Imagem: "/imagens/cores/cinza.mp4", correta: "Cinza", opcoes: ["Branco", "Branco", "Cinza", "Roxo"] },
+  { Imagem: "/imagens/cores/marrom.mp4", correta: "Marrom", opcoes: ["Verde", "Roxo", "Marrom", "Branco"] }
 ];
 
 function embaralharArray(arr) {
