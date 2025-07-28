@@ -1,16 +1,16 @@
 const perguntasBase = [
   { Imagem: "/imagens/meses/janeiro.mp4", correta: "Janeiro", opcoes: ["Janeiro", "Fevereiro", "Março", "Abril"] },
-  { Imagem: "/imagens/meses/fevereiro.mp4", correta: "Fevereiro", opcoes: ["Fevereiro", "Janeiro", "Agosto", "Dezembro"] },
-  { Imagem: "/imagens/meses/marco.mp4", correta: "Março", opcoes: ["Março", "Abril", "Julho", "Junho"] },
-  { Imagem: "/imagens/meses/abril.mp4", correta: "Abril", opcoes: ["Abril", "Maio", "Fevereiro", "Janeiro"] },
+  { Imagem: "/imagens/meses/fevereiro.mp4", correta: "Fevereiro", opcoes: ["Agosto", "Janeiro", "Fevereiro", "Dezembro"] },
+  { Imagem: "/imagens/meses/marco.mp4", correta: "Março", opcoes: ["Abril", "Março", "Julho", "Junho"] },
+  { Imagem: "/imagens/meses/abril.mp4", correta: "Abril", opcoes: ["Fevereiro", "Maio", "Abril", "Janeiro"] },
   { Imagem: "/imagens/meses/maio.mp4", correta: "Maio", opcoes: ["Maio", "Junho", "Março", "Outubro"] },
-  { Imagem: "/imagens/meses/junho.mp4", correta: "Junho", opcoes: ["Junho", "Julho", "Agosto", "Abril"] },
-  { Imagem: "/imagens/meses/julho.mp4", correta: "Julho", opcoes: ["Julho", "Junho", "Maio", "Setembro"] },
-  { Imagem: "/imagens/meses/agosto.mp4", correta: "Agosto", opcoes: ["Agosto", "Outubro", "Fevereiro", "Janeiro"] },
+  { Imagem: "/imagens/meses/junho.mp4", correta: "Junho", opcoes: ["Agosto", "Julho", "Junho", "Abril"] },
+  { Imagem: "/imagens/meses/julho.mp4", correta: "Julho", opcoes: ["Maio", "Junho", "Julho", "Setembro"] },
+  { Imagem: "/imagens/meses/agosto.mp4", correta: "Agosto", opcoes: ["Janeiro", "Outubro", "Fevereiro", "Agosto"] },
   { Imagem: "/imagens/meses/setembro.mp4", correta: "Setembro", opcoes: ["Setembro", "Novembro", "Dezembro", "Março"] },
-  { Imagem: "/imagens/meses/outubro.mp4", correta: "Outubro", opcoes: ["Outubro", "Setembro", "Agosto", "Julho"] },
-  { Imagem: "/imagens/meses/novembro.mp4", correta: "Novembro", opcoes: ["Novembro", "Outubro", "Maio", "Janeiro"] },
-  { Imagem: "/imagens/meses/dezembro.mp4", correta: "Dezembro", opcoes: ["Dezembro", "Novembro", "Junho", "Abril"] }
+  { Imagem: "/imagens/meses/outubro.mp4", correta: "Outubro", opcoes: ["Novembro", "Setembro", "Outubro", "Julho"] },
+  { Imagem: "/imagens/meses/novembro.mp4", correta: "Novembro", opcoes: ["Maio", "Outubro", "Novembro", "Janeiro"] },
+  { Imagem: "/imagens/meses/dezembro.mp4", correta: "Dezembro", opcoes: ["Agosto", "Novembro", "Dezembro", "Abril"] }
 ];
 
 function embaralharArray(arr) {
