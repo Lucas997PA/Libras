@@ -1,11 +1,11 @@
 const perguntasBase = [
- { Imagem: "/imagens/semana/domingo.mp4", correta: "Domingo", opcoes: ["Domingo", "Segunda", "Terça", "Quarta"] },
+ { Imagem: "/imagens/semana/domingo.mp4", correta: "Domingo", opcoes: ["Terça", "Segunda", "Domingo", "Quarta"] },
   { Imagem: "/imagens/semana/segunda.mp4", correta: "Segunda", opcoes: ["Segunda", "Domingo", "Quinta", "Sábado"] },
-  { Imagem: "/imagens/semana/terca.mp4", correta: "Terça", opcoes: ["Terça", "Sexta", "Quarta", "Segunda"] },
-  { Imagem: "/imagens/semana/quarta.mp4", correta: "Quarta", opcoes: ["Quarta", "Quinta", "Terça", "Domingo"] },
-  { Imagem: "/imagens/semana/quinta.mp4", correta: "Quinta", opcoes: ["Quinta", "Sexta", "Segunda", "Sábado"] },
+  { Imagem: "/imagens/semana/terca.mp4", correta: "Terça", opcoes: ["Segunda", "Sexta", "Quarta", "Terça"] },
+  { Imagem: "/imagens/semana/quarta.mp4", correta: "Quarta", opcoes: ["Quinta", "Quarta", "Terça", "Domingo"] },
+  { Imagem: "/imagens/semana/quinta.mp4", correta: "Quinta", opcoes: ["Quarta", "Sexta", "Quinta", "Sábado"] },
   { Imagem: "/imagens/semana/sexta.mp4", correta: "Sexta", opcoes: ["Sexta", "Quarta", "Domingo", "Terça"] },
-  { Imagem: "/imagens/semana/sabado.mp4", correta: "Sábado", opcoes: ["Sábado", "Segunda", "Sexta", "Quinta"] }
+  { Imagem: "/imagens/semana/sabado.mp4", correta: "Sábado", opcoes: ["Terça", "Quinta", "Sexta", "Sábado"] }
 ];
 
 function embaralharArray(arr) {
