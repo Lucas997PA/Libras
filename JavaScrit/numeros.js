@@ -10,7 +10,6 @@ const perguntasBase = [
   { Imagem: "/imagens/numeros/7.mp4",  correta: "7",  opcoes: ["9", "1", "0", "7"] },
   { Imagem: "/imagens/numeros/8.mp4",  correta: "8",  opcoes: ["2", "8", "6", "3"] },
   { Imagem: "/imagens/numeros/9.mp4",  correta: "9",  opcoes: ["10", "9", "7", "5"] },
-  { Imagem: "/imagens/numeros/10.mp4", correta: "10", opcoes: ["7", "8", "10", "5"] } 
 ];
 
 function embaralharArray(arr) {
