@@ -2,13 +2,13 @@
 const perguntasBase = [
   { Imagem: "/imagens/numeros/0.mp4",  correta: "0",  opcoes: ["0", "1", "2", "3"] },
   { Imagem: "/imagens/numeros/1.mp4",  correta: "1",  opcoes: ["2", "1", "4", "7"] },
-  { Imagem: "/imagens/numeros/2.mp4",  correta: "2",  opcoes: ["1", "3", "2", "9"] },
+  { Imagem: "/imagens/numeros/2.mp4",  correta: "2",  opcoes: ["1", "3", "2", "5"] },
   { Imagem: "/imagens/numeros/3.mp4",  correta: "3",  opcoes: ["4", "6", "4", "3"] },
   { Imagem: "/imagens/numeros/4.mp4",  correta: "4",  opcoes: ["4", "2", "10", "7"] },
   { Imagem: "/imagens/numeros/5.mp4",  correta: "5",  opcoes: ["3", "5", "9", "6"] },
   { Imagem: "/imagens/numeros/6.mp4",  correta: "6",  opcoes: ["7", "5", "6", "4"] },
   { Imagem: "/imagens/numeros/7.mp4",  correta: "7",  opcoes: ["9", "1", "0", "7"] },
-  { Imagem: "/imagens/numeros/8.mp4",  correta: "8",  opcoes: ["2", "8", "6", "3"] },
+  { Imagem: "/imagens/numeros/8.mp4",  correta: "8",  opcoes: ["5", "8", "6", "3"] },
   { Imagem: "/imagens/numeros/9.mp4",  correta: "9",  opcoes: ["10", "9", "7", "5"] },
 ];
 
