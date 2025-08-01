@@ -10,11 +10,11 @@ const perguntasBase = [
   { Imagem: "/imagens/familia/primo.mp4", correta: "Primo", opcoes: ["Esposo", "Irmão", "Primo", "Neto"] },
   { Imagem: "/imagens/familia/prima.mp4", correta: "Prima", opcoes: ["Esposa", "Irmã", "Prima", "Neta"] },
   { Imagem: "/imagens/familia/sogra.mp4", correta: "Sogra", opcoes: ["Avó", "Sogra", "Mãe", "Tia"] },
-  // { Imagem: "/imagens/familia/sogro.mp4", correta: "Sogro", opcoes: ["Tia", "Avô", "Sogro", "Tio"] },
-  { Imagem: "/imagens/familia/esposa.mp4", correta: "Esposo", opcoes: ["Prima", "Primo", "Esposo", "Sogro"] },
-  { Imagem: "/imagens/familia/esposo.mp4", correta: "Esposa", opcoes: ["Tio", "Prima", "Irmã", "Esposa"] },
+  { Imagem: "/imagens/familia/sogro.mp4", correta: "Sogro", opcoes: ["Tia", "Avô", "Sogro", "Tio"] },
+  { Imagem: "/imagens/familia/esposo.mp4", correta: "Esposo", opcoes: ["Prima", "Primo", "Esposo", "Sogro"] },
+  { Imagem: "/imagens/familia/esposa.mp4", correta: "Esposa", opcoes: ["Tio", "Prima", "Irmã", "Esposa"] },
   { Imagem: "/imagens/familia/neto.mp4", correta: "Neto", opcoes: ["Irmão", "Primo", "Neto", "Esposo"] },
-  { Imagem: "/imagens/familia/neta.mp4", correta: "Neta", opcoes: ["Esposa", "Prima", "Irmã", "Neta"] }
+  { Imagem: "/imagens/familia/neta.mp4", correta: "Neta", opcoes: ["Sogro", "Prima", "Irmã", "Neta"] }
 ];
 
 function embaralharArray(arr) {
