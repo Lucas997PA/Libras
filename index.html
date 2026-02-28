@@ -6,43 +6,60 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles/style.css">
 </head>
-<body>
-<!-- 
-    <div class="top-bar">
-      <button id="toggle-theme" aria-label="Alternar tema claro/escuro">🌙</button>
-    </div> -->
+<body class="dark-mode">
+  <div class="menu-principal-container">
+    <div class="menu-content">
+      <h1 class="menu-title">Bem-vindo ao Jogo de Libras</h1>
+      <p class="menu-subtitle">Aprenda Libras de forma divertida!</p>
 
-  <div class="menu-container">
-    <h1>Bem-vindo ao Jogo de Libras</h1>
-    <p>Aprenda Libras de forma divertida!</p>
-
-    <div class="botoes-menu">
-      <a href="html/jogo.html" class="menu-button">🎮 Jogar</a>
-      <a href="html/Historia_Libras.html" class="menu-button">📘 História sobre a Libras</a>
-      <a href="html/EstudarLibras.html" class="menu-button">Estudar Libras</a>
-      <a id="toggle-theme" class="menu-button"  aria-label="Alternar tema claro/escuro"> Modo Escuro </a>
-      <a href="html/QRCode.html" class="menu-button">🔳 Compartilhar</a>
+      <div class="botoes-menu-principal">
+        <a href="html/jogo.html" class="menu-button-principal primary">
+          <span class="button-icon">🎮</span>
+          <span class="button-text">Jogar</span>
+        </a>
+        <a href="html/Historia_Libras.html" class="menu-button-principal">
+          <span class="button-icon">📘</span>
+          <span class="button-text">História sobre a Libras</span>
+        </a>
+        <a href="html/EstudarLibras.html" class="menu-button-principal">
+          <span class="button-icon">💡</span>
+          <span class="button-text">Estudar Libras</span>
+        </a>
+        <a id="toggle-theme" class="menu-button-principal">
+          <span class="button-icon">⚙️</span>
+          <span class="button-text" id="toggle-text">Modo Claro</span>
+        </a>
+        <a href="html/QRCode.html" class="menu-button-principal">
+          <span class="button-icon">📢</span>
+          <span class="button-text">Compartilhar</span>
+        </a>
+      </div>
     </div>
   </div>
 
+
   <script>
   const toggleButton = document.getElementById("toggle-theme");
+  const toggleText = document.getElementById("toggle-text");
   const body = document.body;
 
   // Verifica se já existe um tema salvo no localStorage
-  if (localStorage.getItem("theme") === "dark") {
+  if (localStorage.getItem("theme") === "light") {
+    body.classList.remove("dark-mode");
+    toggleText.textContent = "Modo Escuro";
+  } else {
     body.classList.add("dark-mode");
-    toggleButton.textContent = "☀️";
+    toggleText.textContent = "Modo Claro";
   }
 
   toggleButton.addEventListener("click", () => {
     body.classList.toggle("dark-mode");
 
     if (body.classList.contains("dark-mode")) {
-      toggleButton.textContent = "☀️";
+      toggleText.textContent = "Modo Claro";
       localStorage.setItem("theme", "dark");
     } else {
-      toggleButton.textContent = "🌙";
+      toggleText.textContent = "Modo Escuro";
       localStorage.setItem("theme", "light");
     }
   });

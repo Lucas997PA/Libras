@@ -6,71 +6,64 @@
   <title>Modos de Jogo - Libras</title>
   <link rel="stylesheet" href="../styles/style.css">
 </head>
-<body>
+<body class="dark-mode">
   
-    <div class="top-bar">
-      <a href="/index.html" class="menu-button voltar">🔙 Voltar ao Menu Principal</a>
+  <div class="top-bar-modo-jogo">
+    <a href="../index.html" class="btn-voltar">🔙 Voltar ao Menu Principal</a>
+  </div>
+
+  <div class="modo-jogo-container">
+    <h1 class="modo-titulo">Modos de Jogo - Libras</h1>
+    <p class="modo-subtitulo">Escolha uma categoria para aprender brincando:</p>
+
+    <div class="botoes-fases-grid">
+      <a href="alfabeto.html" class="fase-card">
+        <img src="../Imagens/Img_Dos_Botão/alfabeto.png" alt="Fase Alfabeto" class="fase-image">
+        <div class="fase-title">Alfabeto em Libras</div>
+        <div class="fase-count">26 questões</div>
+      </a>
+
+      <a href="numeros.html" class="fase-card">
+        <img src="../Imagens/Img_Dos_Botão/numero.png" alt="Fase Números" class="fase-image">
+        <div class="fase-title">Números em Libras</div>
+        <div class="fase-count">11 questões</div>
+      </a>
+
+      <a href="cores.html" class="fase-card">
+        <img src="../Imagens/Img_Dos_Botão/cores.png" alt="Fase Cores" class="fase-image">
+        <div class="fase-title">Cores em Libras</div>
+        <div class="fase-count">10 questões</div>
+      </a>
+
+      <a href="familia.html" class="fase-card">
+        <img src="../Imagens/Img_Dos_Botão/familia.png" alt="Fase Família" class="fase-image">
+        <div class="fase-title">Família em Libras</div>
+        <div class="fase-count">10 questões</div>
+      </a>
+
+      <a href="meses.html" class="fase-card">
+        <img src="../Imagens/Img_Dos_Botão/meses.png" alt="Fase Meses" class="fase-image">
+        <div class="fase-title">Meses em Libras</div>
+        <div class="fase-count">12 questões</div>
+      </a>
+
+      <a href="dias.html" class="fase-card">
+        <img src="../Imagens/Img_Dos_Botão/semana.png" alt="Fase Dias da Semana" class="fase-image">
+        <div class="fase-title">Dias da Semana</div>
+        <div class="fase-count">7 questões</div>
+      </a>
     </div>
-
-  <div class="historia">
-
-    <h1 class="menu-container">Modos de Jogo - Libras</h1>
-    <p class="menu-container">Escolha uma categoria para aprender brincando:</p>
-
-  <div class="botoes-fase">
-    <a href="alfabeto.html" class="fase-button fase">
-      <img src="/imagens/Img_Dos_Botão/alfabeto.png" alt="Fase Alfabeto">
-      <span>✅ Alfabeto em Libras<br>26 questões</span>
-    </a>
-
-    <a href="numeros.html" class="fase-button fase">
-      <img src="/imagens/Img_Dos_Botão/numero.png" alt="Fase Números">
-      <span>🔢 Números em Libras<br>11 questões</span>
-    </a>
-
-    <a href="cores.html" class="fase-button fase">
-      <img src="/imagens/Img_Dos_Botão/cores.png" alt="Fase Cores">
-      <span>🎨 Cores em Libras<br>10 questões</span>
-    </a>
-
-    <a href="familia.html" class="fase-button fase">
-      <img src="/imagens/Img_Dos_Botão/familia.png" alt="Fase Família">
-      <span>👨‍👩‍👧‍👦 Família em Libras<br>10 questões</span>
-    </a>
-
-    <a href="meses.html" class="fase-button fase">
-      <img src="/imagens/Img_Dos_Botão/meses.png" alt="Fase Meses">
-      <span>📆 Meses em Libras<br>12 questões</span>
-    </a>
-
-    <a href="dias.html" class="fase-button fase">
-      <img src="/imagens/Img_Dos_Botão/semana.png" alt="Fase Dias da Semana">
-      <span>📅 Dias da Semana<br>7 questões</span>
-    </a>
   </div>
 
-  </div>
   <script>
-  const toggleButton = document.getElementById("toggle-theme");
   const body = document.body;
 
   // Verifica se já existe um tema salvo no localStorage
-  if (localStorage.getItem("theme") === "dark") {
+  if (localStorage.getItem("theme") === "light") {
+    body.classList.remove("dark-mode");
+  } else {
     body.classList.add("dark-mode");
-    toggleButton.textContent = "☀️";
   }
-
-  toggleButton.addEventListener("click", () => {
-    body.classList.toggle("dark-mode");
-
-    if (body.classList.contains("dark-mode")) {
-      toggleButton.textContent = "☀️";
-      localStorage.setItem("theme", "dark");
-    } else {
-      toggleButton.textContent = "🌙";
-      localStorage.setItem("theme", "light");
-    }
-  });
 </script>
 
 </body>
